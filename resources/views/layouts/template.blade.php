@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset = "utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="icon" type="image/x-png" href="https://br.seaicons.com/wp-content/uploads/2017/03/leaf-icon.png">
+
+	    <title>Projeto Piaya</title>  
+
+	    {{ Html::style('tcc/css/bootstrap.min.css') }}
+    	{{ Html::style('tcc/css/estilo.css') }}  
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-success ">
+			<div class="container">
+				<img src="https://br.seaicons.com/wp-content/uploads/2017/03/leaf-icon.png" style="width: 30px; height: auto; margin-right: 5px;">
+				{{ link_to_route(
+                'home',
+                'Piaya',
+                [],
+                ['class' => 'navbar-brand']) }}
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						@guest
+						<li class="nav-item">
+							<a class="nav-link" href="#">{{ __('Login') }}</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">{{ __('Register') }}</a>
+						</li>
+						@endguest
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+				
+				@yield('conteudo')
+			
+		</div>
+
+		<footer class="py-3 bg-success sla">
+			<div class="container">
+				<p class="m-0 text-center text-white">Copyright &copy; Murilo Brasil e Rafael Tesch - 2019</p>
+			</div>
+		</footer>
+
+		{{ Html::script('tcc/js/jquery.min.js') }}
+		{{ Html::script('tcc/js/bootstrap.bundle.min.js') }}
+		{{ Html::script('tcc/js/tcc.js') }}
+		{{ Html::script('tcc/js/ajax.js') }}
+
+	</body>
+</html>
