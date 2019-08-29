@@ -8,9 +8,13 @@ Route::get('/teste', function () {
     return view('welcome');
 });
 
+Route::get('/denuncias', 'DenunciasController@index')
+	->middleware('auth')
+	->name('denuncias.index');
+
 Auth::routes();
 
 Route::get('/',function(){
-	return view('teste/teste');
+	return view('denuncias/index');
 })
 ->name('home');
