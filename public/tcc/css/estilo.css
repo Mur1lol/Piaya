@@ -1,11 +1,17 @@
-.espacamento {
-	margin-top: 50px;
-	margin-bottom: 50px;
+
+.footer {
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	position: relative; /*fixed*/
+	width: 100%;
 }
 
-.sla {
-	position: relative;
-	top: 83px;
-	right: 0;
-	left: 0;
+.table {
+	margin-bottom: 0px;
+	background-color: #acff89ba;
+}
+
+.chao {
+	margin-bottom: 50px;
 }

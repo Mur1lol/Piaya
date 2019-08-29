@@ -16,10 +16,11 @@
 			<div class="container">
 				<img src="https://br.seaicons.com/wp-content/uploads/2017/03/leaf-icon.png" style="width: 30px; height: auto; margin-right: 5px;">
 				{{ link_to_route(
-                'home',
-                'Piaya',
-                [],
-                ['class' => 'navbar-brand']) }}
+	                'home',
+	                'Piaya',
+	                [],
+	                ['class' => 'navbar-brand']
+                ) }}
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -27,17 +28,16 @@
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Home
+							<a class="nav-link" href="{{ route('home') }}">Home
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
 						@guest
 						<li class="nav-item">
-							<a class="nav-link" href="#">{{ __('Login') }}</a>
+						    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
 						</li>
-
 						<li class="nav-item">
-							<a class="nav-link" href="#">{{ __('Register') }}</a>
+						    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
 						</li>
 						@endguest
 					</ul>
@@ -45,13 +45,17 @@
 			</div>
 		</nav>
 
-		<div class="container">
+		<!-- <div class="container">
 				
 				@yield('conteudo')
 			
-		</div>
+		</div> -->
 
-		<footer class="py-3 bg-success sla">
+		<main class="py-4">
+            @yield('conteudo')
+        </main>
+
+		<footer class="py-2 bg-success footer">
 			<div class="container">
 				<p class="m-0 text-center text-white">Copyright &copy; Murilo Brasil e Rafael Tesch - 2019</p>
 			</div>

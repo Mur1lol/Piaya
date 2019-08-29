@@ -1,15 +1,16 @@
 <?php
 
-Route::get('/', function () {
-	$pagina="<h1>Hello Routes!</h1>";
-	$pagina.="<h2>Me veja no browser</h2>";
-	return$pagina;
+Route::get('/teste', function () {
+	// $pagina="<h1>Hello Routes!</h1>";
+	// $pagina.="<h2>Me veja no browser</h2>";
+	// return$pagina;
 
-    // return view('welcome');
+    return view('welcome');
 });
 
-Route::get('/teste',function(){
+Auth::routes();
+
+Route::get('/',function(){
 	return view('teste/teste');
-	// return view('layouts/template');
 })
 ->name('home');
