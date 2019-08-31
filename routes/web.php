@@ -12,9 +12,11 @@ Route::get('/denuncias', 'DenunciasController@index')
 	->middleware('auth')
 	->name('denuncias.index');
 
+Route::get('/aa', function() {
+	return view('denuncias/teste');
+});
+
 Auth::routes();
 
-Route::get('/',function(){
-	return view('denuncias/index');
-})
+Route::get('/', 'DenunciasController@index')
 ->name('home');

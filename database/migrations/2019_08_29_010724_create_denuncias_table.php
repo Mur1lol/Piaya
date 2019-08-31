@@ -15,9 +15,9 @@ class CreateDenunciasTable extends Migration
     {
         Schema::create('denuncias', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('problema');
             $table->string('tipo');
-            $table->string('info');
-            $table->string('extra');
+            $table->string('lixeira');
             $table->string('acontecimento');
             $table->string('local');
             

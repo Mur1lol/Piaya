@@ -63,12 +63,6 @@
 			</div>
 		</nav>
 
-		<!-- <div class="container">
-				
-				@yield('conteudo')
-			
-		</div> -->
-
 		<main class="py-4">
             @yield('conteudo')
         </main>
@@ -83,6 +77,6 @@
 		{{ Html::script('tcc/js/bootstrap.bundle.min.js') }}
 		{{ Html::script('tcc/js/tcc.js') }}
 		{{ Html::script('tcc/js/ajax.js') }}
-
+		{{ Html::script('https://kit.fontawesome.com/8f5e3edf98.js') }}
 	</body>
 </html>
