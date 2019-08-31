@@ -2,14 +2,29 @@
 .footer {
 	bottom: 0;
 	left: 0;
-	height: 40px;
+	/*height: 40px;*/
 	position: fixed; /*fixed*/
 	width: 100%;
+	font-size: 12px;
 }
 
 .table {
 	margin-bottom: 0px;
 	background-color: #acff89ba;
+}
+
+tr:nth-of-type(odd) {
+	background-color: #fff;
+}
+
+tr:nth-of-type(even) {
+	background: #acff89ba;
+}
+
+.table-dark {
+	border: 0;
+	color: #000;
+	background-color: #fff;
 }
 
 .chao {

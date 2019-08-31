@@ -75,7 +75,7 @@
             @yield('conteudo')
         </main>
 
-		<footer class="py-2 bg-success footer">
+		<footer class="py-2 bg-success text-center footer">
 			<div class="container">
 				<p class="m-0 text-center text-white">Copyright &copy; Murilo Brasil e Rafael Tesch - 2019</p>
 			</div>

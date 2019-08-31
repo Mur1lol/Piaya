@@ -15,32 +15,38 @@
 		</div>
 	</div>
 
-	<div class="card border border-dark">
-		<div class="table-responsive">
-			<table class="table table-bordered text-center">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">Problema</th>
-						<th scope="col">Tipo</th>
-						<th scope="col">Lixeira</th>
-						<th scope="col">Acontecimento</th>
-						<th scope="col">Local</th>
-					</tr>
-				</thead>
-				<tbody class="denuncias">
-				@foreach($denuncias as $denuncia)
-					<tr>
-						<th scope="row">{{ $denuncia->problema }}</th>
-						<td>{{ $denuncia->tipo }}</td>
-						<td>{{ $denuncia->lixeira }}</td>
-						<td>{{ $denuncia->acontecimento }}</td>
-						<td>{{ $denuncia->local }}</td>
-					</tr>
-				@endforeach
-				</tbody>
-			</table>
-		</div>
+	<div class="table-responsive">
+		<table class="table table-bordered table-dark text-center">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Problema</th>
+					<th scope="col">Tipo</th>
+					<th scope="col">Lixeira</th>
+					<th scope="col">Acontecimento</th>
+					<th scope="col">Local</th>
+				</tr>
+			</thead>
+			<tbody class="denuncias">
+			@foreach($denuncias as $denuncia)
+				<tr>
+					<th scope="row">{{ $denuncia->problema }}</th>
+					<td>{{ $denuncia->tipo }}</td>
+					<td>{{ $denuncia->lixeira }}</td>
+					<td>{{ $denuncia->acontecimento }}</td>
+					<td>{{ $denuncia->local }}</td>
+				</tr>
+				<tr>
+					<th scope="row">{{ $denuncia->problema }}</th>
+					<td>{{ $denuncia->tipo }}</td>
+					<td>{{ $denuncia->lixeira }}</td>
+					<td>{{ $denuncia->acontecimento }}</td>
+					<td>{{ $denuncia->local }}</td>
+				</tr>
+			@endforeach
+			</tbody>
+		</table>
 	</div>
+	
 	@endguest
 </div>
 @endsection
