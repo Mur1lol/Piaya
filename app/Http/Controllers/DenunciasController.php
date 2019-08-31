@@ -13,12 +13,9 @@ class DenunciasController extends Controller
         return view('denuncias.index', compact('denuncias'));
     }
 
-    public function gerarRelatorio($id) {
-
-        // Todos os Alunos
-        if($id == 0) { $denuncias = Denuncia::all(); }
-        // Um Aluno Específico
-        else { $denuncias = Denuncia::where('id', '=', $id)->get(); }
+    public function gerarRelatorio($problema) {
+        if($problema == "0") { $denuncias = Denuncia::all(); }
+        else { $denuncias = Denuncia::where('problema', 'like', $problema)->get(); }
 
         return \PDF::loadView('denuncias.relatorio', compact('denuncias'))
                 ->setPaper('A4', 'portrait')

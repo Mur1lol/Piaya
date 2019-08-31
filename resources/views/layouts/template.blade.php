@@ -40,13 +40,42 @@
 						    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
 						</li>
 						@else
-						<li class="nav-item">
-						    {{ link_to_route(
-						        'denuncias.relatorio',
-						        'Gerar Relatório',
-						        [0],
-						        ['class' => 'nav-link', 'target' => '_blank']) }}
-						</li>
+						<div class="nav-item dropdown">
+  							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+						        Gerar Ralatório <span class="caret"></span>
+						    </a>
+							<ul class="dropdown-menu">
+								<li>
+									{{ link_to_route(
+									'denuncias.relatorio',
+									'Todos',
+									["0"],
+									['class' => 'dropdown-item', 'target' => '_blank']) }}
+								</li>
+								<li>
+									{{ link_to_route(
+									'denuncias.relatorio',
+									'Lixo',
+									["Descarte incorreto de lixo ou residuos"],
+									['class' => 'dropdown-item', 'target' => '_blank']) }}
+								</li>
+								<li>
+									{{ link_to_route(
+									'denuncias.relatorio',
+									'Água',
+									["Problemas relacionados a agua"],
+									['class' => 'dropdown-item', 'target' => '_blank']) }}
+								</li>
+								<li>
+									{{ link_to_route(
+									'denuncias.relatorio',
+									'Luz',
+									["Uso inadequado da luz"],
+									['class' => 'dropdown-item', 'target' => '_blank']) }}
+								</li>
+							</ul>
+						</div>
+						
 
 						<li class="nav-item dropdown">
 						    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

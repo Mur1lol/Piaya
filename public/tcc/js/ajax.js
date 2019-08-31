@@ -5,7 +5,6 @@ $(document).ready(function(){
 	function busca() {
 		var filtro = $('.busca-input').val();
 
-		console.log(filtro.length)
 		$.ajax({
 			url: 'tcc/js/busca.json.php',
 			data: `filtro=${filtro}`,

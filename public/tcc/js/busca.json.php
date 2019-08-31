@@ -14,8 +14,6 @@
 		$filtro = $_GET["filtro"];
 	}
 
-	 // || strlen($filtro) <= 2
-
 	if ($filtro == "") {
 		$query = ("SELECT * FROM denuncias");
 	}

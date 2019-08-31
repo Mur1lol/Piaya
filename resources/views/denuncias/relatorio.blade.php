@@ -29,41 +29,6 @@
                         <td>{{ $denuncia->acontecimento }}</td>
                         <td>{{ $denuncia->local }}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">{{ $denuncia->problema }}</th>
-                        <td>{{ $denuncia->tipo }}</td>
-                        <td>{{ $denuncia->lixeira }}</td>
-                        <td>{{ $denuncia->acontecimento }}</td>
-                        <td>{{ $denuncia->local }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">{{ $denuncia->problema }}</th>
-                        <td>{{ $denuncia->tipo }}</td>
-                        <td>{{ $denuncia->lixeira }}</td>
-                        <td>{{ $denuncia->acontecimento }}</td>
-                        <td>{{ $denuncia->local }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">{{ $denuncia->problema }}</th>
-                        <td>{{ $denuncia->tipo }}</td>
-                        <td>{{ $denuncia->lixeira }}</td>
-                        <td>{{ $denuncia->acontecimento }}</td>
-                        <td>{{ $denuncia->local }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">{{ $denuncia->problema }}</th>
-                        <td>{{ $denuncia->tipo }}</td>
-                        <td>{{ $denuncia->lixeira }}</td>
-                        <td>{{ $denuncia->acontecimento }}</td>
-                        <td>{{ $denuncia->local }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">{{ $denuncia->problema }}</th>
-                        <td>{{ $denuncia->tipo }}</td>
-                        <td>{{ $denuncia->lixeira }}</td>
-                        <td>{{ $denuncia->acontecimento }}</td>
-                        <td>{{ $denuncia->local }}</td>
-                    </tr>
                 @endforeach
                 </tbody>
             </table>
@@ -71,9 +36,7 @@
         
         <br>
         <footer class="py-2 bg-success text-center footer">
-            <div class="container">
-                <b class="m-0 text-center text-white">Copyright &copy; Murilo Brasil e Rafael Tesch - 2019</b>
-            </div>
+            <b class="m-0 text-center text-white">Copyright &copy; Murilo Brasil e Rafael Tesch - 2019</b>
         </footer>
     </body>
 </html>

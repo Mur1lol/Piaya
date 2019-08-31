@@ -35,13 +35,6 @@
 					<td>{{ $denuncia->acontecimento }}</td>
 					<td>{{ $denuncia->local }}</td>
 				</tr>
-				<tr>
-					<th scope="row">{{ $denuncia->problema }}</th>
-					<td>{{ $denuncia->tipo }}</td>
-					<td>{{ $denuncia->lixeira }}</td>
-					<td>{{ $denuncia->acontecimento }}</td>
-					<td>{{ $denuncia->local }}</td>
-				</tr>
 			@endforeach
 			</tbody>
 		</table>
