@@ -30,3 +30,26 @@ tr:nth-of-type(even) {
 .chao {
 	margin-bottom: 40px;
 }
+
+#table-scroll {
+  height:450px;
+  overflow:auto;
+}
+
+@media only screen and (max-width: 767px) {
+	table {
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	table {
+		font-size: 8px;
+	}
+}
+
+@media only screen and (max-width: 410px) {
+	table {
+		font-size: 6px;
+	}
+}

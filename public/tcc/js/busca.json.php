@@ -18,7 +18,7 @@
 		$query = ("SELECT * FROM denuncias");
 	}
 	else {
-		$query = ("SELECT * FROM denuncias WHERE denuncias.problema LIKE '%$filtro%' OR denuncias.tipo LIKE '%$filtro%' OR denuncias.lixeira LIKE '%$filtro%' OR denuncias.acontecimento LIKE '%$filtro%' OR denuncias.local LIKE '%$filtro%' ORDER BY denuncias.problema");
+		$query = ("SELECT * FROM denuncias WHERE denuncias.problema LIKE '%$filtro%' OR denuncias.tipo LIKE '%$filtro%' OR denuncias.lixeira LIKE '%$filtro%' OR denuncias.acontecimento LIKE '%$filtro%' OR denuncias.local LIKE '%$filtro%' ORDER BY denuncias.local");
 	}
 
 	$result= mysqli_query($con,$query);

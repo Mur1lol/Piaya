@@ -15,19 +15,27 @@
 		</div>
 	</div>
 
-	<div class="table-responsive">
+	
+	<div class="table-responsive" id="table-scroll">
 		<table class="table table-bordered table-dark text-center">
-			<thead class="thead-dark">
+			<thead class="thead-dark texto" id="titulo">
 				<tr>
-					<th scope="col">Problema</th>
-					<th scope="col">Tipo</th>
-					<th scope="col">Lixeira</th>
-					<th scope="col">Acontecimento</th>
-					<th scope="col">Local</th>
+					<th scope="col"><span class="text">Problema</span></th>
+					<th scope="col"><span class="text">Tipo</span></th>
+					<th scope="col"><span class="text">Lixeira</span></th>
+					<th scope="col"><span class="text">Acontecimento</span></th>
+					<th scope=	"col"><span class="text">Local</span></th>
 				</tr>
 			</thead>
 			<tbody class="denuncias">
 			@foreach($denuncias as $denuncia)
+				<tr>
+					<th scope="row">{{ $denuncia->problema }}</th>
+					<td>{{ $denuncia->tipo }}</td>
+					<td>{{ $denuncia->lixeira }}</td>
+					<td>{{ $denuncia->acontecimento }}</td>
+					<td>{{ $denuncia->local }}</td>
+				</tr>
 				<tr>
 					<th scope="row">{{ $denuncia->problema }}</th>
 					<td>{{ $denuncia->tipo }}</td>

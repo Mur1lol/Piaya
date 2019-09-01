@@ -15,7 +15,7 @@ class DenunciasController extends Controller
 
     public function gerarRelatorio($problema) {
         if($problema == "0") { $denuncias = Denuncia::all(); }
-        else { $denuncias = Denuncia::where('problema', 'like', $problema)->get(); }
+        else { $denuncias = Denuncia::where('problema', 'like', $problema)->orderBy('local')->get(); }
 
         return \PDF::loadView('denuncias.relatorio', compact('denuncias'))
                 ->setPaper('A4', 'portrait')
