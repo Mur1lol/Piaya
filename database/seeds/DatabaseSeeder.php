@@ -24,7 +24,11 @@ class DatabaseSeeder extends Seeder
         
         DB::insert('INSERT INTO denuncias (problema, tipo, lixeira, acontecimento, local) VALUES (?,?,?,?,?)', 
         	array ('Descarte incorreto de lixo ou residuos','Perfurocortante','Reciclavel',
-        		'Objeto afiado em lixeira de reciclaveis','Sala 10'));
+                'Objeto afiado em lixeira de reciclaveis','Sala 10'));
+                
+        DB::insert('INSERT INTO denuncias (problema, tipo, lixeira, acontecimento, local) VALUES (?,?,?,?,?)', 
+            array ('Descarte incorreto de lixo ou residuos','Perfurocortante','Reciclavel',
+                'Objeto afiado em lixeira de reciclaveis','Sala 10'));
 
         DB::insert('INSERT INTO denuncias (problema, tipo, lixeira, acontecimento, local) VALUES (?,?,?,?,?)', 
         	array ('Uso inadequado da luz','Ar condicionado ligado em sala vazia','--','Tava ligado','Sala 07'));

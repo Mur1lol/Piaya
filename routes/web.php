@@ -16,7 +16,12 @@ Route::get('/denuncias/relatorio/{problema}', 'DenunciasController@gerarRelatori
 	->middleware('auth')
 	->name('denuncias.relatorio');
 
+Route::get('/denuncias/grafico', 'DenunciasController@grafico')
+	->middleware('auth')
+	->name('denuncias.grafico');
+
 Auth::routes();
 
 Route::get('/', 'DenunciasController@index')
-->name('home');
+	->middleware('auth')
+	->name('home');
