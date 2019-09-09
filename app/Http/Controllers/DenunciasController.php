@@ -14,6 +14,18 @@ class DenunciasController extends Controller
         return view('denuncias.index', compact('denuncias'));
     }
 
+    public function create() {
+        return view('denuncias.create');
+    }
+
+    public function store(Request $request) {
+        $denuncia = new Denuncia();
+        $denuncia->fill($request->all());
+        $denuncia->save();
+
+        return redirect(route('denuncias.index'));
+    }
+
     public function gerarRelatorio($problema) {
         if($problema == "0") { $denuncias = Denuncia::all(); }
         else { $denuncias = Denuncia::where('problema', 'like', $problema)->orderBy('local')->get(); }

@@ -32,6 +32,13 @@
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
+						<li class="nav-item">
+							{{ link_to_route(
+							'denuncias.create',
+							'Criar Denuncia',
+							[],
+							['class' => 'nav-link']) }}
+						</li>
 						@guest
 						<li class="nav-item">
 						    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

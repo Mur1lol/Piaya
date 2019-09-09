@@ -12,6 +12,14 @@ Route::get('/denuncias', 'DenunciasController@index')
 	->middleware('auth')
 	->name('denuncias.index');
 
+Route::get('/denuncias/create', 'DenunciasController@create')
+	->middleware('auth')
+	->name('denuncias.create');
+
+Route::post('/denuncias', 'DenunciasController@store')
+	->middleware('auth')
+	->name('denuncias.store');
+
 Route::get('/denuncias/relatorio/{problema}', 'DenunciasController@gerarRelatorio')
 	->middleware('auth')
 	->name('denuncias.relatorio');

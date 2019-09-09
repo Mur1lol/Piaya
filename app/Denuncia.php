@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Denuncia extends Model
 {
-    protected $fillable = ['id','tipo', 'informacao', 'extra', 'acontecimento', 'local'];
+    protected $fillable = ['id','problema', 'tipo', 'lixeira', 'acontecimento', 'local'];
 }
