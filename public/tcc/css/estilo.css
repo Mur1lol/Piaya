@@ -36,13 +36,29 @@ tr:nth-of-type(even) {
 	overflow:auto;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1550px) {
 	table {
 		font-size: 12px;
 	}
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 1125px) {
+
+	.label-radio {
+		font-size: 11px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	table {
+		font-size: 10px;
+	}
+	.label-radio {
+		font-size: 10px;
+	}
+}
+
+@media only screen and (max-width: 570px) {
 	table {
 		font-size: 8px;
 	}

@@ -13,18 +13,16 @@ Route::get('/denuncias', 'DenunciasController@index')
 	->name('denuncias.index');
 
 Route::get('/denuncias/create', 'DenunciasController@create')
-	->middleware('auth')
 	->name('denuncias.create');
 
 Route::post('/denuncias', 'DenunciasController@store')
-	->middleware('auth')
 	->name('denuncias.store');
 
-Route::get('/denuncias/relatorio/{problema}', 'DenunciasController@gerarRelatorio')
+Route::get('/denuncias/relatorio/{problema}.pdf', 'DenunciasController@gerarRelatorio')
 	->middleware('auth')
 	->name('denuncias.relatorio');
 
-Route::get('/denuncias/grafico', 'DenunciasController@grafico')
+Route::get('/denuncias/grafico/{opcao}', 'DenunciasController@grafico')
 	->middleware('auth')
 	->name('denuncias.grafico');
 

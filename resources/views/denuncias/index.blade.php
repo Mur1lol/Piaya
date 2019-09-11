@@ -23,23 +23,22 @@
 				    <button class="btn btn-success pesquisa busca" type="submit"><i class="fas fa-search"></i></button>
 				</div>
 			</div>
-
 			
 			<div class="table-responsive" id="table-scroll">
-				<table class="table table-bordered table-dark text-center">
-					<thead class="thead-dark texto" id="titulo">
-						<tr>
-							<th scope="col"><span class="text">Problema</span></th>
-							<th scope="col"><span class="text">Tipo</span></th>
-							<th scope="col"><span class="text">Lixeira</span></th>
-							<th scope="col"><span class="text">Acontecimento</span></th>
-							<th scope=	"col"><span class="text">Local</span></th>
+				<table class="table table-bordered table-dark text-center" >
+					<thead class="" id="titulo">
+						<tr  style="background-color: #a9ff85;">
+							<th scope="col">Problema</th>
+							<th scope="col">Tipo</th>
+							<th scope="col">Lixeira</th>
+							<th scope="col">Acontecimento</th>
+							<th scope="col">Local</th>
 						</tr>
 					</thead>
-					<tbody class="denuncias">
+					<tbody class="denuncias" >
 					@foreach($denuncias as $denuncia)
 						<tr>
-							<th scope="row">{{ $denuncia->problema }}</th>
+							<td scope="row">{{ $denuncia->problema }}</td>
 							<td>{{ $denuncia->tipo }}</td>
 							<td>{{ $denuncia->lixeira }}</td>
 							<td>{{ $denuncia->acontecimento }}</td>

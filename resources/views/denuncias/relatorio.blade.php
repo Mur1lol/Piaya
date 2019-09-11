@@ -36,7 +36,7 @@
         
         <br>
         <footer class="py-2 bg-success text-center footer">
-            <b class="m-0 text-center text-white">Copyright &copy; Murilo Brasil e Rafael Tesch - 2019</b>
+            <b class="m-0 text-center text-white">Murilo Brasil e Rafael Tesch - 2019</b>
         </footer>
     </body>
 </html>

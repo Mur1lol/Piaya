@@ -48,13 +48,27 @@
 						</li>
 						@else
 
-						<li class="nav-item">
-							{{ link_to_route(
-							'denuncias.grafico',
-							'Gráfico',
-							[],
-							['class' => 'nav-link']) }}
-						</li>
+						<div class="nav-item dropdown">
+  							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+						        Visualizar Gráficos<span class="caret"></span>
+						    </a>
+							<ul class="dropdown-menu">
+								<li>
+									{{ link_to_route(
+									'denuncias.grafico',
+									'Problemas',
+									["problema"],
+									['class' => 'dropdown-item']) }}
+								</li>
+								<li>
+									{{ link_to_route(
+									'denuncias.grafico',
+									'Locais',
+									["local"],
+									['class' => 'dropdown-item']) }}
+								</li>
+							</ul>
+						</div>
 
 						<div class="nav-item dropdown">
   							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -122,7 +136,7 @@
 
 		<footer class="py-2 bg-success text-center footer">
 			<div class="container">
-				<p class="m-0 text-center text-white">Copyright &copy; Murilo Brasil e Rafael Tesch - 2019</p>
+				<p class="m-0 text-center text-white">Murilo Brasil e Rafael Tesch - 2019</p>
 			</div>
 		</footer>
 
