@@ -23,7 +23,7 @@ class DenunciasController extends Controller
         $denuncia->fill($request->all());
         $denuncia->save();
 
-        return redirect(route('denuncias.index'));
+        return redirect(route('denuncias.create'));
     }
 
     public function gerarRelatorio($problema) {
