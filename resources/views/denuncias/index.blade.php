@@ -7,7 +7,6 @@
 		<h3 class="text-center">Você precisa estar conectado para ter acesso aos dados</h3>
 		<div class="text-center"><img src="https://www.estagiarea.com.br/wp-content/uploads/2019/01/gear2.gif"></div>
 	@else
-
 		@if (count($denuncias) == 0)
 			<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
 				<strong>Sem nenhuma denuncia até o momento :) !</strong>
@@ -27,7 +26,7 @@
 			<div class="table-responsive" id="table-scroll">
 				<table class="table table-bordered table-dark text-center" >
 					<thead class="" id="titulo">
-						<tr  style="background-color: #a9ff85;">
+						<tr style="background-color: #a9ff85;">
 							<th scope="col">Problema</th>
 							<th scope="col">Tipo</th>
 							<th scope="col">Lixeira</th>

@@ -21,7 +21,7 @@ $(document).ready(function(){
                 <option value="Perfurocortante">Perfurocortante</option>
             </select>
         </div>`
-        $('#lixeiras').show(2000);
+        $('#lixeiras').show(1500);
     })
 
     document.getElementById('agua').addEventListener('click', function() { 
@@ -36,9 +36,11 @@ $(document).ready(function(){
                 <option selected value="">Escolha...</option>
                 <option value="Entupimento">Entupimento</option>
                 <option value="Torneira aberta">Torneira aberta</option>
+                <option value="Torneiras com defeito">Torneiras com defeito</option>
+                <option value="Falta de agua">Falta de água</option>
             </select>
         </div>`
-        $('#lixeiras').hide(2000);
+        $('#lixeiras').hide(1500);
     })
 
     document.getElementById('luz').addEventListener('click', function() { 
@@ -53,9 +55,10 @@ $(document).ready(function(){
                 <option selected value="">Escolha...</option>
                 <option value="Luz acesa em ambiente vazio">Luz acesa em ambiente vazio</option>
                 <option value="Ar condicionado ligado em sala vazia">Ar condicionado ligado em sala vazia</option>
+                <option value="Computadores ligados com a sala vazia">Computadores ligados com a sala vazia</option>
             </select>
         </div>`
-        $('#lixeiras').hide(2000);
+        $('#lixeiras').hide(1500);
     })
 
     document.querySelector('.envio').addEventListener('click', function(){

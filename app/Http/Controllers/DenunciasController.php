@@ -75,7 +75,6 @@ class DenunciasController extends Controller
 
         $denuncia = Denuncia::all();
 
-        // Invoca a View
         return view('denuncias.grafico', compact('lava', 'denuncia'))
             ->with('tipo', 'PieChart');
     }
@@ -97,6 +96,8 @@ class DenunciasController extends Controller
         $sala10 = Denuncia::where('local', '=', 'sala 10')->count();
         $sala11 = Denuncia::where('local', '=', 'sala 11')->count();
         $sala12 = Denuncia::where('local', '=', 'sala 12')->count();
+        $banheiro = Denuncia::where('local', '=', 'banheiro')->count();
+        $quadra = Denuncia::where('local', '=', 'quadra')->count();
         $lab1   = Denuncia::where('local', '=', 'Laboratorio 1 - Informatica')->count();
         $lab2   = Denuncia::where('local', '=', 'Laboratorio 2 - Informatica')->count();
         $lab3   = Denuncia::where('local', '=', 'Laboratorio 3 - Informatica')->count();
@@ -120,6 +121,8 @@ class DenunciasController extends Controller
                 ->addRow(['Sala 10', $sala10])
                 ->addRow(['Sala 11', $sala11])
                 ->addRow(['Sala 12', $sala12])
+                ->addRow(['Banheiro', $banheiro])
+                ->addRow(['Quadra', $quadra])
                 ->addRow(['Laboratório 1 - Informática', $lab1])
                 ->addRow(['Laboratório 2 - Informática', $lab2])
                 ->addRow(['Laboratório 3 - Informática', $lab3])
@@ -142,7 +145,6 @@ class DenunciasController extends Controller
 
         $denuncia = Denuncia::all();
 
-        // Invoca a View
         return view('denuncias.grafico', compact('lava', 'denuncia'))
             ->with('tipo', 'PieChart');
     }

@@ -5,32 +5,18 @@
 @endsection
 
 @section('conteudo')
+<style type="text/css">
+    datalist {
+        background-color: #e2f;
+    }
+</style>
 
-    <div class="container">
-        <?php
-            $abc = $_SERVER['HTTP_REFERER'];
-            if ($abc == "http://localhost:8000/denuncias/create") {
-                echo '<div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                        <strong>Denuncia enviada com sucesso :) !</strong>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>';
-            }  
-        ?>
-
+    <div class="container chao">
         {!! Form::open(['route' => 'denuncias.store']) !!}
+
         <div class="form-group" id="problemas">
         	{!! Form::label('lixo', 'Problema') !!}
             <div class="row">
-            	<!-- <div class="input-group col-md-4">
-	            	<div class="input-group-prepend">
-						<div class="input-group-text">
-							{!! Form::radio('problema', 'Descarte incorreto de lixo ou residuos', false) !!}
-						</div>
-					</div>
-					{!! Form::label('lixo', 'Descarte incorreto de lixo ou residuos', ['class' => 'form-control']) !!}
-	            </div> -->
             	<div class="input-group col-md-4" id="p1">
             		<div class="input-group-prepend">
 						<div class="input-group-text">
@@ -62,30 +48,6 @@
             <div class="form-group" id="tipos">
                 {!! Form::label('tipo', 'Tipo') !!}
                 <div class="respostas"> </div>
-                <!-- <div class="input-group mb-3">
-                	{!! Form::select(
-                		'tipo', 
-                		array(
-                			'' => 'Selecione...',
-                			'Lixo' => array(
-                				'Comum' => 'Comum',
-                				'Reciclavel' => 'Reciclavel'
-                			),
-
-                			'Agua' => array(
-                				'Entupimento' => 'Entupimento',
-                				'Torneira Aberta' => 'Torneira Aberta'
-                			),
-
-                			'Luz'  => array(
-                				'Luz acesa em ambiente vazio' => 'Luz acesa em ambiente vazio',
-                				'Ar condicionado ligado em sala vazia' => 'Ar condicionado ligado em sala vazia'
-                			)
-    					), 
-    					'', 
-    					['class' => 'custom-select', 'required'] )
-    				!!}
-                </div> -->
             </div>
 
             <div class="form-group" id="lixeiras">
@@ -121,6 +83,8 @@
                 			'Sala 10' => 'Sala 10',
                 			'Sala 11' => 'Sala 11',
                 			'Sala 12' => 'Sala 12',
+                            'Banheiro' => 'Banheiro',
+                            'Quadra' => 'Quadra',
                             'Laboratorio 1 - Informatica' => 'Laboratório 1 - Informática',
                             'Laboratorio 2 - Informatica' => 'Laboratório 2 - Informática',
                             'Laboratorio 3 - Informatica' => 'Laboratório 3 - Informática',

@@ -11,7 +11,7 @@
 				</button>
 			</div>
 		@else
-		    <div id="lava_div" style="height: 500px">
+		    <div id="lava_div" class="grafico" style="font-size: 50px">
 		        <?php echo $lava->render($tipo, 'Dados', 'lava_div'); ?>
 		    </div>
 	    @endif
