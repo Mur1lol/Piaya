@@ -142,8 +142,7 @@
 
 		{{ Html::script('tcc/js/jquery.min.js') }}
 		{{ Html::script('tcc/js/bootstrap.bundle.min.js') }}
-		{{ Html::script('tcc/js/tcc.js') }}
-		{{ Html::script('tcc/js/ajax.js') }}
+		@yield('script')
 		{{ Html::script('https://kit.fontawesome.com/8f5e3edf98.js') }}
 	</body>
 </html>

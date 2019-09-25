@@ -51,3 +51,7 @@
 	@endguest
 </div>
 @endsection
+
+@section('script')
+    {{ Html::script('tcc/js/ajax.js') }}
+@endsection

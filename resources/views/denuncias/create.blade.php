@@ -110,3 +110,7 @@
         {!! Form::close() !!}
     </div>
 @endsection
+
+@section('script')
+    {{ Html::script('tcc/js/tcc.js') }}
+@endsection
