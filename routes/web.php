@@ -26,6 +26,18 @@ Route::get('/denuncias/grafico/{opcao}', 'DenunciasController@grafico')
 	->middleware('auth')
 	->name('denuncias.grafico');
 
+Route::get('/perfil/{user}', 'DenunciasController@show')
+	->middleware('auth')
+    ->name('denuncias.show');
+
+Route::get('/perfil/{user}/edit', 'DenunciasController@edit')
+	->middleware('auth')
+    ->name('denuncias.edit');
+
+Route::put('/perfil/{user}', 'DenunciasController@update')
+	->middleware('auth')
+    ->name('denuncias.update');
+
 Auth::routes();
 
 Route::get('/', 'DenunciasController@index')

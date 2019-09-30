@@ -35,7 +35,7 @@
 						<li class="nav-item">
 							{{ link_to_route(
 							'denuncias.create',
-							'Criar Denuncia',
+							'Problema Identificado',
 							[],
 							['class' => 'nav-link']) }}
 						</li>
@@ -48,63 +48,65 @@
 						</li>
 						@else
 
-						<div class="nav-item dropdown">
-  							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-						        Visualizar Gráficos<span class="caret"></span>
-						    </a>
-							<ul class="dropdown-menu">
-								<li>
-									{{ link_to_route(
-									'denuncias.grafico',
-									'Problemas',
-									["problema"],
-									['class' => 'dropdown-item']) }}
-								</li>
-								<li>
-									{{ link_to_route(
-									'denuncias.grafico',
-									'Locais',
-									["local"],
-									['class' => 'dropdown-item']) }}
-								</li>
-							</ul>
-						</div>
+							@if (Auth::user()->adm == 1)
+							<div class="nav-item dropdown">
+	  							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+							        Visualizar Gráficos<span class="caret"></span>
+							    </a>
+								<ul class="dropdown-menu">
+									<li>
+										{{ link_to_route(
+										'denuncias.grafico',
+										'Problemas',
+										["problema"],
+										['class' => 'dropdown-item']) }}
+									</li>
+									<li>
+										{{ link_to_route(
+										'denuncias.grafico',
+										'Locais',
+										["local"],
+										['class' => 'dropdown-item']) }}
+									</li>
+								</ul>
+							</div>
 
-						<div class="nav-item dropdown">
-  							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-						        Gerar Ralatório <span class="caret"></span>
-						    </a>
-							<ul class="dropdown-menu">
-								<li>
-									{{ link_to_route(
-									'denuncias.relatorio',
-									'Todos',
-									["0"],
-									['class' => 'dropdown-item', 'target' => '_blank']) }}
-								</li>
-								<li>
-									{{ link_to_route(
-									'denuncias.relatorio',
-									'Lixo',
-									["Descarte incorreto de lixo ou residuos"],
-									['class' => 'dropdown-item', 'target' => '_blank']) }}
-								</li>
-								<li>
-									{{ link_to_route(
-									'denuncias.relatorio',
-									'Água',
-									["Problemas relacionados a agua"],
-									['class' => 'dropdown-item', 'target' => '_blank']) }}
-								</li>
-								<li>
-									{{ link_to_route(
-									'denuncias.relatorio',
-									'Luz',
-									["Uso inadequado da luz"],
-									['class' => 'dropdown-item', 'target' => '_blank']) }}
-								</li>
-							</ul>
-						</div>
+							<div class="nav-item dropdown">
+	  							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+							        Gerar Ralatório <span class="caret"></span>
+							    </a>
+								<ul class="dropdown-menu">
+									<li>
+										{{ link_to_route(
+										'denuncias.relatorio',
+										'Todos',
+										["0"],
+										['class' => 'dropdown-item', 'target' => '_blank']) }}
+									</li>
+									<li>
+										{{ link_to_route(
+										'denuncias.relatorio',
+										'Lixo',
+										["Descarte incorreto de lixo ou residuos"],
+										['class' => 'dropdown-item', 'target' => '_blank']) }}
+									</li>
+									<li>
+										{{ link_to_route(
+										'denuncias.relatorio',
+										'Água',
+										["Problemas relacionados a agua"],
+										['class' => 'dropdown-item', 'target' => '_blank']) }}
+									</li>
+									<li>
+										{{ link_to_route(
+										'denuncias.relatorio',
+										'Luz',
+										["Uso inadequado da luz"],
+										['class' => 'dropdown-item', 'target' => '_blank']) }}
+									</li>
+								</ul>
+							</div>
+						@endif
 						
 
 						<li class="nav-item dropdown">
@@ -113,10 +115,15 @@
 						    </a>
 
 						    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-						        <a class="dropdown-item" href="{{ route('logout') }}"
-						            onclick="event.preventDefault();
-						                          document.getElementById('logout-form').submit();">
-						            {{ __('Logout') }}
+						        {{ link_to_route(
+									'denuncias.show',
+									'Perfil',
+									[ Auth::user()->id ],
+									['class' => 'dropdown-item']) }}
+
+						        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+						        document.getElementById('logout-form').submit();">
+						            {{ __('Sair') }}
 						        </a>
 
 						        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

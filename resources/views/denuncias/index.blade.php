@@ -3,9 +3,10 @@
 @section('conteudo')
 <div class="container chao">
 
-	@guest
-		<h3 class="text-center">Você precisa estar conectado para ter acesso aos dados</h3>
-		<div class="text-center"><img src="https://www.estagiarea.com.br/wp-content/uploads/2019/01/gear2.gif"></div>
+	@if (Auth::user()->adm != 1)
+		<div class="alert alert-danger text-center" role="alert">
+			<strong>Está é uma função disponivel apenas para o Administrador!</strong>
+		</div>
 	@else
 		@if (count($denuncias) == 0)
 			<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
@@ -32,6 +33,7 @@
 							<th scope="col">Lixeira</th>
 							<th scope="col">Acontecimento</th>
 							<th scope="col">Local</th>
+							<th scope="col">Usuario</th>
 						</tr>
 					</thead>
 					<tbody class="denuncias" >
@@ -42,6 +44,7 @@
 							<td>{{ $denuncia->lixeira }}</td>
 							<td>{{ $denuncia->acontecimento }}</td>
 							<td>{{ $denuncia->local }}</td>
+							<td>ANONIMO</td>
 						</tr>
 					@endforeach
 					</tbody>

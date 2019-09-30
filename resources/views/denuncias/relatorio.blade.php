@@ -7,6 +7,11 @@
         <link rel="stylesheet" type="text/css" href="tcc/css/estilo.css">
     </head>
     <body>
+        @if (Auth::user()->adm != 1)
+            <div class="alert alert-danger text-center" role="alert">
+                <strong>Está é uma função disponivel apenas para o Administrador!</strong>
+            </div>
+        @else
         <div class="jumbotron" style="background-color: #a9ff85; padding: 25px;">
             <img src="https://admin.googleusercontent.com/logo-scs-key1103327" style="width: 200px;">
             <h2 style="float: right;position: relative;top: 25px;">Relatório de Denuncias</h2>
@@ -43,5 +48,6 @@
         <footer class="py-2 text-center footer" style="background-color: #a9ff85; padding: 25px;">
             <b class="m-0">Murilo Brasil e Rafael Tesch - 2019</b>
         </footer>
+        @endif
     </body>
 </html>

@@ -61,6 +61,9 @@
                             </div>
                         </div>
 
+                        <input id="adm" type="hidden" class="form-control" name="adm" value="0" required autocomplete="new-adm">
+                         
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
