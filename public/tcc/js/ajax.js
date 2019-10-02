@@ -25,6 +25,7 @@ $(document).ready(function(){
 				<td>${denuncia.lixeira }</td>
 				<td>${denuncia.acontecimento }</td>
 				<td>${denuncia.local }</td>
+				<td>${denuncia.user_name}</td>
 			</tr>
 		`;
 		$('.denuncias').append(resultado);

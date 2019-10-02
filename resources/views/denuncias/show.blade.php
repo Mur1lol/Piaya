@@ -6,7 +6,7 @@
 			<div class="container text-center">
 				<h2>Ops...</h2>
 				<p>Parece que você está tentando ver as informações de outra pessoa.</p>
-				<img src="https://img.ibxk.com.br/2017/12/12/gif-giphy-12172743636300.gif">
+				<img src="https://media3.giphy.com/media/1zgdz51cpTgGmbBXiS/source.gif">
 			</div>
 		@else
 		<div class="row">
@@ -27,11 +27,18 @@
 					<label for="senha">Senha</label>
 					<input type="password" class="form-control" id="senha" value="{{ $user->password }}" disabled>
 				</div>
+				
 				{{ link_to_route(
 				'denuncias.edit',
 				'Atualizar Dados',
 				[$user->id],
 				['class' => 'btn btn-primary']) }}
+
+				{{link_to_route(
+				'denuncias.edit',
+				'Solicitar Administração',
+				[Auth::user()->id],
+				['class' => 'btn btn-primary'])}}
 
 				@if ($user->adm == 0)
 
@@ -51,7 +58,11 @@
 				@else
 					<button class="btn btn-success">Você é um Administrador</button>
 				@endif
-
+				{{link_to_route(
+				'denuncias.edit',
+				'Solicitar Administração',
+				[Auth::user()->id],
+				['class' => 'btn btn-primary'])}}
 				
 			</div>
 		</div>

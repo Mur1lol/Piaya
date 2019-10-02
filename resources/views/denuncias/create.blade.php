@@ -101,10 +101,16 @@
             </div>
 
             <div class="form-group" id="acontecimentos">
-                {!! Form::label('acontecimento', 'Acontecimento') !!} <small>(Não colocar caracteres especiais)</small>
+                {!! Form::label('acontecimento', 'Acontecimento') !!}
                 {!! Form::textarea('acontecimento', '', ['class' => 'form-control','placeholder' => 'Digite aqui...', 'rows' => '3', 'required', 'maxlength' => '100']) !!}
             </div>
         </div>
+
+        @guest
+            {!! Form::text('user_name', 'Anonimo', ['class' => 'form-control','required', 'hidden', 'id' => 'user_name']) !!}
+        @else
+            {!! Form::text('user_name', Auth::user()->name , ['class' => 'form-control','required', 'hidden', 'id' => 'user_name']) !!}
+        @endguest
 
         {!! Form::submit('Enviar', ['class' => 'envio btn btn-primary']) !!}
         {!! Form::close() !!}

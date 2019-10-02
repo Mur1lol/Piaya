@@ -44,7 +44,7 @@
 							<td>{{ $denuncia->lixeira }}</td>
 							<td>{{ $denuncia->acontecimento }}</td>
 							<td>{{ $denuncia->local }}</td>
-							<td>ANONIMO</td>
+							<td>{{ $denuncia->user_name }}</td>
 						</tr>
 					@endforeach
 					</tbody>

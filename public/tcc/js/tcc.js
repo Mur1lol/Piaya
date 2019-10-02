@@ -66,6 +66,11 @@ $(document).ready(function(){
         var valor2 = retira_acentos(valor1).replace(/[^a-zA-Z0-9 ]/g, "")
 
         document.getElementById('acontecimento').value = valor2
+
+        var valor3 = document.getElementById('user_name').value
+        var valor4 = retira_acentos(valor3).replace(/[^a-zA-Z0-9 ]/g, "")
+
+        document.getElementById('user_name').value = valor4
     })
 
 
