@@ -40,6 +40,52 @@ tr:nth-of-type(even) {
 	height: 0px;
 }
 
+.card-text {
+  grid-area: text;
+  margin: 25px;
+}
+
+.card-text p {
+  color: black;
+  font-size:15px;
+  font-weight: 300;
+}
+.card-index:hover {
+  transform: scale(1.15);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.6);
+}
+.card-index {
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin:30px;
+}
+
+.dev {
+	width: 18rem; 
+	background-color: #a9ff85;
+
+	border-radius: 15px;
+}
+
+.perfil {
+	border-radius: 50%;
+	margin-top: 10px;
+	padding-left: 95px;
+	padding-right: 95px;
+}
+
+.menu {
+	text-transform: uppercase;
+	-webkit-text-stroke: medium;
+	background-color: #a9ff85;
+
+	position: sticky;
+	top: 75px;
+
+	border: 1px solid lightgray;
+	border-radius: 15px;
+}
+
 @media only screen and (max-width: 1550px) {
 	table {
 		font-size: 12px;
