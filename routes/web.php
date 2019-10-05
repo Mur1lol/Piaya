@@ -1,11 +1,14 @@
 <?php
 
-Route::get('/teste', function () {
-	// $pagina="<h1>Hello Routes!</h1>";
-	// $pagina.="<h2>Me veja no browser</h2>";
-	// return$pagina;
+use App\Mail\EnviarEmail;
+use Illuminate\Support\Facades\Mail;
 
-    return view('home');
+Route::get('/send-mail', function () {
+
+    Mail::to('bc.murilo.mbc@gmail.com')->send(new EnviarEmail()); 
+
+    return 'Mensagem Enviada!';
+
 });
 
 Route::get('/denuncias', 'DenunciasController@index')

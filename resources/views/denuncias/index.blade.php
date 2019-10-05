@@ -103,7 +103,13 @@
 							<td>{{ $denuncia->lixeira }}</td>
 							<td>{{ $denuncia->acontecimento }}</td>
 							<td>{{ $denuncia->local }}</td>
-							<td>{{ $denuncia->user_name }}</td>
+							@foreach($users as $user)
+								@if ($denuncia->user_id == $user->id)
+									<td>{{ $user->name }}</td>
+								@else
+									<td>Anônimo</td>
+								@endif
+							@endforeach
 						</tr>
 					@endforeach
 					</tbody>

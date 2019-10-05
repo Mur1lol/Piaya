@@ -20,26 +20,26 @@
             	<div class="input-group col-md-4" id="p1">
             		<div class="input-group-prepend">
 						<div class="input-group-text">
-		            		<input type="radio" id="lixo" name="problema" value="Descarte incorreto de lixo ou residuos" required>
-		            	</div>
-		            </div>
-            		<label for="lixo" class="form-control label-radio">Descarte incorreto de lixo ou residuos</label>
+                            {!! Form::radio('problema', 'Descarte incorreto de lixo ou residuos', false, ['id' => 'lixo', 'required']) !!}
+                        </div>
+                    </div>
+                    {!! Form::label('lixo', 'Descarte incorreto de lixo ou residuos', ['class' => 'form-control label-radio']) !!}
             	</div>
             	<div class="input-group col-md-4">
             		<div class="input-group-prepend">
 						<div class="input-group-text">
-		            		<input type="radio" id="agua" name="problema" value="Problemas relacionados a agua">
-		            	</div>
-		            </div>
-            		<label for="agua" class="form-control label-radio">Problemas relacionados a agua</label>
+                            {!! Form::radio('problema', 'Problemas relacionados a agua', false, ['id' => 'agua']) !!}
+                        </div>
+                    </div>
+                    {!! Form::label('agua', 'Problemas relacionados a agua', ['class' => 'form-control label-radio']) !!}
             	</div>
             	<div class="input-group col-md-4">
             		<div class="input-group-prepend">
 						<div class="input-group-text">
-		            		<input type="radio" id="luz" name="problema" value="Uso inadequado da luz">
+                            {!! Form::radio('problema', 'Uso inadequado da luz', false, ['id' => 'luz']) !!}
 		            	</div>
 		            </div>
-            		<label for="luz" class="form-control label-radio">Uso inadequado da luz</label>
+                    {!! Form::label('luz', 'Uso inadequado da luz', ['class' => 'form-control label-radio']) !!}
             	</div>
             </div>
         </div>
@@ -107,9 +107,9 @@
         </div>
 
         @guest
-            {!! Form::text('user_name', 'Anonimo', ['class' => 'form-control','required', 'hidden', 'id' => 'user_name']) !!}
+            {!! Form::text('user_id', '', ['class' => 'form-control', 'hidden']) !!}
         @else
-            {!! Form::text('user_name', Auth::user()->name , ['class' => 'form-control','required', 'hidden', 'id' => 'user_name']) !!}
+            {!! Form::text('user_id', Auth::user()->id, ['class' => 'form-control','hidden']) !!}
         @endguest
 
         {!! Form::submit('Enviar', ['class' => 'envio btn btn-primary']) !!}

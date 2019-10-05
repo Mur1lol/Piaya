@@ -4,7 +4,9 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\meuResetDeSenha;
 
 class User extends Authenticatable
 {
@@ -39,5 +41,10 @@ class User extends Authenticatable
 
     public function denuncias(){
         return $this->hasMany(Denuncia::class);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new meuResetDeSenha($token));
     }
 }

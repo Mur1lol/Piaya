@@ -34,12 +34,6 @@
 				[$user->id],
 				['class' => 'btn btn-primary']) }}
 
-				{{link_to_route(
-				'denuncias.edit',
-				'Solicitar Administração',
-				[Auth::user()->id],
-				['class' => 'btn btn-primary'])}}
-
 				@if ($user->adm == 0)
 
 				<!-- {{link_to_route(
@@ -58,11 +52,6 @@
 				@else
 					<button class="btn btn-success">Você é um Administrador</button>
 				@endif
-				{{link_to_route(
-				'denuncias.edit',
-				'Solicitar Administração',
-				[Auth::user()->id],
-				['class' => 'btn btn-primary'])}}
 				
 			</div>
 		</div>

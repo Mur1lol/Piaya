@@ -11,8 +11,9 @@ use Auth;
 class DenunciasController extends Controller
 {
     public function index() {
+        $users = User::all();
         $denuncias = Denuncia::all();
-        return view('denuncias.index', compact('denuncias'));
+        return view('denuncias.index', compact('denuncias', 'users'));
     }
 
     public function create() {
