@@ -29,12 +29,24 @@
 		$query = ("
 			SELECT DISTINCT denuncias.*, IF(user_id = users.id,name, 'Anonimo') as usuario 
 			FROM denuncias, users 
-			WHERE denuncias.problema LIKE '%$filtro%' AND user_id = users.id 
-			OR denuncias.tipo LIKE '%$filtro%' AND user_id = users.id 
-			OR denuncias.lixeira LIKE '%$filtro%' AND user_id = users.id 
-			OR denuncias.acontecimento LIKE '%$filtro%' AND user_id = users.id 
-			OR denuncias.local LIKE '%$filtro%' AND user_id = users.id 
-			OR users.name like '%$filtro%' AND user_id = users.id 
+			WHERE denuncias.problema LIKE '%$filtro%' AND user_id = users.id
+			OR denuncias.problema LIKE '%$filtro%' AND user_id is NULL
+
+			OR denuncias.tipo LIKE '%$filtro%' AND user_id = users.id
+			OR denuncias.tipo LIKE '%$filtro%' AND user_id is NULL
+
+			OR denuncias.lixeira LIKE '%$filtro%' AND user_id = users.id
+			OR denuncias.lixeira LIKE '%$filtro%' AND user_id is NULL
+
+			OR denuncias.acontecimento LIKE '%$filtro%' AND user_id = users.id
+			OR denuncias.acontecimento LIKE '%$filtro%' AND user_id is NULL
+
+			OR denuncias.local LIKE '%$filtro%' AND user_id = users.id
+			OR denuncias.local LIKE '%$filtro%' AND user_id is NULL
+
+			OR users.name like '%$filtro%' AND user_id = users.id
+			OR users.name like '%$filtro%' AND user_id is NULL
+
 			ORDER BY denuncias.local"
 		);
 	}
