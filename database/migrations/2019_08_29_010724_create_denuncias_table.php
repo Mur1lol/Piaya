@@ -21,11 +21,10 @@ class CreateDenunciasTable extends Migration
             $table->string('acontecimento');
             $table->string('local');
             // $table->string('user_name');
-            
-            $table->timestamps();
-
             $table->bigInteger('user_id')->nullable()->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users');
+            
+            $table->timestamps();
         });
     }
 

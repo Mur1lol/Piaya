@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="card-index menu" style="border-radius: 15px;">
+				<div class="card menu" style="border-radius: 15px;">
 					<div class="card-header text-center">
 						Menu
 					</div>
@@ -81,7 +81,7 @@
 				<div class="input-group-append">
 				    <button class="btn btn-success pesquisa busca" type="submit"><i class="fas fa-search"></i></button>
 				</div>
-			</div>
+			</div>			
 			
 			<div class="table-responsive" id="table-scroll">
 				<table class="table table-bordered table-dark text-center" >
@@ -103,13 +103,11 @@
 							<td>{{ $denuncia->lixeira }}</td>
 							<td>{{ $denuncia->acontecimento }}</td>
 							<td>{{ $denuncia->local }}</td>
-							@foreach($users as $user)
-								@if ($denuncia->user_id == $user->id)
-									<td>{{ $user->name }}</td>
-								@else
-									<td>Anônimo</td>
-								@endif
-							@endforeach
+							@if ($denuncia->user_id == "")
+								<td>Anonimo</td>
+							@else
+								<td>{{ $denuncia->user->name }}</td>
+							@endif
 						</tr>
 					@endforeach
 					</tbody>

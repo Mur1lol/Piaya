@@ -11,9 +11,8 @@ use Auth;
 class DenunciasController extends Controller
 {
     public function index() {
-        $users = User::all();
         $denuncias = Denuncia::all();
-        return view('denuncias.index', compact('denuncias', 'users'));
+        return view('denuncias.index', compact('denuncias'));
     }
 
     public function create() {
@@ -23,6 +22,7 @@ class DenunciasController extends Controller
     public function store(Request $request) {
         $denuncia = new Denuncia();
         $denuncia->fill($request->all());
+        $denuncia->user()->associate(Auth::user());
         $denuncia->save();
 
         return redirect(route('denuncias.index'));

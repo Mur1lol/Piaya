@@ -44,11 +44,8 @@ class meuResetDeSenha extends Notification
         ->subject('Redefinir senha')
             ->line('Você está recebendo este e-mail porque recebemos uma solicitação de redefinição de senha para sua conta.')
             ->action('Redefinir senha', route('password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()]))
-            ->line('Esse link de redefinição de senha expirará em :count minutos.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')])
+            ->line('Esse link de redefinição de senha expirará em 1 hora.')
             ->line('Se você não solicitou uma redefinição de senha, nenhuma ação adicional será necessária.');
-
-
-           
     }
 
     /**
