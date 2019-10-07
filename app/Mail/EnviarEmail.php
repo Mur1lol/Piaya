@@ -27,7 +27,7 @@ class EnviarEmail extends Mailable {
      */
     public function build() {
         return $this->from('piaya.devs@gmail.com', 'Piaya Developers')
-            ->subject('Email Padrão')
+            ->subject('Solicitação de Administração')
             ->markdown('mails.exmpl')
             ->with([
                 'name' => 'Murilo',

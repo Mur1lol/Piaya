@@ -101,28 +101,28 @@ class DenunciasController extends Controller
         $lava = new Lavacharts;
         $denuncias = $lava->DataTable();
 
-        $sala01 = Denuncia::where('local', '=', 'sala 01')->count();
-        $sala02 = Denuncia::where('local', '=', 'sala 02')->count();
-        $sala03 = Denuncia::where('local', '=', 'sala 03')->count();
-        $sala04 = Denuncia::where('local', '=', 'sala 04')->count();
-        $sala05 = Denuncia::where('local', '=', 'sala 05')->count();
-        $sala06 = Denuncia::where('local', '=', 'sala 06')->count();
-        $sala07 = Denuncia::where('local', '=', 'sala 07')->count();
-        $sala08 = Denuncia::where('local', '=', 'sala 08')->count();
-        $sala09 = Denuncia::where('local', '=', 'sala 09')->count();
-        $sala10 = Denuncia::where('local', '=', 'sala 10')->count();
-        $sala11 = Denuncia::where('local', '=', 'sala 11')->count();
-        $sala12 = Denuncia::where('local', '=', 'sala 12')->count();
+        $sala01   = Denuncia::where('local', '=', 'sala 01')->count();
+        $sala02   = Denuncia::where('local', '=', 'sala 02')->count();
+        $sala03   = Denuncia::where('local', '=', 'sala 03')->count();
+        $sala04   = Denuncia::where('local', '=', 'sala 04')->count();
+        $sala05   = Denuncia::where('local', '=', 'sala 05')->count();
+        $sala06   = Denuncia::where('local', '=', 'sala 06')->count();
+        $sala07   = Denuncia::where('local', '=', 'sala 07')->count();
+        $sala08   = Denuncia::where('local', '=', 'sala 08')->count();
+        $sala09   = Denuncia::where('local', '=', 'sala 09')->count();
+        $sala10   = Denuncia::where('local', '=', 'sala 10')->count();
+        $sala11   = Denuncia::where('local', '=', 'sala 11')->count();
+        $sala12   = Denuncia::where('local', '=', 'sala 12')->count();
         $banheiro = Denuncia::where('local', '=', 'banheiro')->count();
-        $quadra = Denuncia::where('local', '=', 'quadra')->count();
-        $lab1   = Denuncia::where('local', '=', 'Laboratorio 1 - Informatica')->count();
-        $lab2   = Denuncia::where('local', '=', 'Laboratorio 2 - Informatica')->count();
-        $lab3   = Denuncia::where('local', '=', 'Laboratorio 3 - Informatica')->count();
-        $lab4   = Denuncia::where('local', '=', 'Laboratorio 4 - Informatica')->count();
-        $lab5   = Denuncia::where('local', '=', 'Laboratorio 5 - Informatica')->count();
-        $labBio = Denuncia::where('local', '=', 'Laboratorio Biologia')->count();
-        $labQui = Denuncia::where('local', '=', 'Laboratorio Quimica')->count();
-        $labFis = Denuncia::where('local', '=', 'Laboratorio Fisica')->count();
+        $quadra   = Denuncia::where('local', '=', 'quadra')->count();
+        $lab1     = Denuncia::where('local', '=', 'Laboratorio 1 - Informatica')->count();
+        $lab2     = Denuncia::where('local', '=', 'Laboratorio 2 - Informatica')->count();
+        $lab3     = Denuncia::where('local', '=', 'Laboratorio 3 - Informatica')->count();
+        $lab4     = Denuncia::where('local', '=', 'Laboratorio 4 - Informatica')->count();
+        $lab5     = Denuncia::where('local', '=', 'Laboratorio 5 - Informatica')->count();
+        $labBio   = Denuncia::where('local', '=', 'Laboratorio Biologia')->count();
+        $labQui   = Denuncia::where('local', '=', 'Laboratorio Quimica')->count();
+        $labFis   = Denuncia::where('local', '=', 'Laboratorio Fisica')->count();  
 
         $denuncias->addStringColumn('Locais')
                 ->addNumberColumn('Nr. denuncias')

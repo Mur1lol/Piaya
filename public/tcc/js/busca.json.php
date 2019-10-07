@@ -6,9 +6,6 @@
 
 	$con = mysqli_connect($servidor, $usuario, $senha, $bd);
 	// mysqli_select_db($con, $bd); 
-	//SELECT `problema`, `tipo`, `lixeira`, `acontecimento`, `local`, `name` FROM `denuncias`, `users` WHERE denuncias.problema LIKE '%agua%' OR denuncias.tipo LIKE '%agua%' OR denuncias.lixeira LIKE '%agua%' OR denuncias.acontecimento LIKE '%agua%' OR denuncias.local LIKE '%agua%' ORDER BY denuncias.local
-
-	//SELECT DISTINCT denuncias.*, IF(user_id = users.id,name, 'Anonimo') as usuario FROM denuncias, users where denuncias.problema LIKE '%agua%' AND user_id = users.id OR denuncias.tipo LIKE '%agua%' AND user_id = users.id OR denuncias.lixeira LIKE '%agua%' AND user_id = users.id OR denuncias.acontecimento LIKE '%agua%' AND user_id = users.id OR denuncias.local LIKE '%agua%' AND user_id = users.id OR users.name like '%agua%' AND user_id = users.id ORDER BY denuncias.local
 
 //------------------------------------------------------------------------------------------------------------
 

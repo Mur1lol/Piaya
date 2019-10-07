@@ -3,9 +3,9 @@
 use App\Mail\EnviarEmail;
 use Illuminate\Support\Facades\Mail;
 
-Route::get('/send-mail', function () {
+Route::get('/enviar', function () {
 
-    Mail::to('bc.murilo.mbc@gmail.com')->send(new EnviarEmail()); 
+    Mail::to('piaya.devs@gmail.com')->send(new EnviarEmail()); 
 
     return 'Mensagem Enviada!';
 

@@ -28,6 +28,7 @@
                         <th scope="col">Lixeira</th>
                         <th scope="col">Acontecimento</th>
                         <th scope="col">Local</th>
+                        <th scope="col">Usuario</th>
                     </tr>
                 </thead>
                 <tbody class="denuncias" >
@@ -38,6 +39,11 @@
                         <td>{{ $denuncia->lixeira }}</td>
                         <td>{{ $denuncia->acontecimento }}</td>
                         <td>{{ $denuncia->local }}</td>
+                        @if ($denuncia->user_id == "")
+                            <td>Anonimo</td>
+                        @else
+                            <td>{{ $denuncia->user->name }}</td>
+                        @endif
                     </tr>
                 @endforeach
                 </tbody>
