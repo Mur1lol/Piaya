@@ -35,16 +35,16 @@
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					<div class="row">
-						<div class="card-index dev">
-							<h2 class="text-center" style="margin-top: 10px;">Murilo</h2>
-							<img class="perfil" src="{{ asset('images/Murilo.jpg') }}">
+						<div class="col-md-5 card-index dev">
+							<h3 class="text-center" style="margin-top: 10px;">Murilo</h3>
+							<img class="perfil" src="{{ asset('images/Murilo.jpg') }}" style="width: 286px;">
 							<div class="card-text text-center">
 								<p> Lorem ipsum dolor sente-se em entre consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt elegendi dolor </p>
 							</div>
 						</div>
-						<div class="card-index dev" style="width: 18rem; background-color: #a9ff85">
-							<h2 class="text-center" style="margin-top: 10px;">Murilo</h2>
-							<img class="perfil" src="{{ asset('images/Murilo.jpg') }}">
+						<div class="col-md-5 card-index dev">
+							<h3 class="text-center" style="margin-top: 10px;">Rafael</h3>
+							<img class="perfil" src="{{ asset('images/Rafael.jpg') }}" style="width: 286px;">
 							<div class="card-text text-center">
 								<p> Lorem ipsum dolor sente-se em entre consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt elegendi dolor </p>
 							</div>
@@ -60,7 +60,7 @@
 					
 						<ul class="list-group list-group-flush">
 							<li class="list-group-item"><a href="#sobre">Sobre</a></li>
-							<li class="list-group-item"><a href="#exemplo">Exemplos</a></li>
+							<li class="list-group-item"><a href="#exemplo">Exemplo</a></li>
 							<li class="list-group-item" style="border-bottom-left-radius: 15px;border-bottom-right-radius: 15px"><a href="#devs">Desenvolvedores</a></li>
 						</ul>
 				</div>
