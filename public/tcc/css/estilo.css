@@ -110,13 +110,13 @@ tr:nth-of-type(even) {
 
 @media only screen and (max-width: 570px) {
 	table {
-		font-size: 8px;
+		font-size: 7px;
 	}
 }
 
 @media only screen and (max-width: 410px) {
 	table {
-		font-size: 6px;
+		font-size: 5px;
 	}
 }
 
