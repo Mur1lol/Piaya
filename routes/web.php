@@ -37,9 +37,13 @@ Route::get('/perfil/{user}/edit', 'DenunciasController@edit')
 	->middleware('auth')
     ->name('denuncias.edit');
 
-Route::put('/perfil/{user}', 'DenunciasController@update')
+Route::put('/perfil/{user}', 'DenunciasController@updateUser')
 	->middleware('auth')
-    ->name('denuncias.update');
+    ->name('denuncias.updateUser');
+
+Route::put('/denuncias/{denuncia}', 'DenunciasController@updateDenuncia')
+	->middleware('auth')
+    ->name('denuncias.updateDenuncia');
 
 Auth::routes();
 

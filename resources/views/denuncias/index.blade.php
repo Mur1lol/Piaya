@@ -67,14 +67,21 @@
 			</div>
 		</div>
 	@else
-		@if (count($denuncias) == 0)
+		<?php $ativo = 0 ?>
+				
+		@foreach($denuncias as $denuncia)
+			@if($denuncia->status == 0)
+				<?php $ativo = 1?>
+			@endif
+		@endforeach
+
+		@if($ativo == 0)
 			<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
 				<strong>Sem nenhuma denuncia até o momento :) !</strong>
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-
 		@else
 			<div class="input-group mb-3">
 				<input type="text" id="busca-teste" class="form-control busca-input" placeholder="Buscar...">
@@ -93,22 +100,31 @@
 							<th scope="col">Acontecimento</th>
 							<th scope="col">Local</th>
 							<th scope="col">Usuario</th>
+							<th scope="col">Excluir</th>
 						</tr>
 					</thead>
 					<tbody class="denuncias" >
 					@foreach($denuncias as $denuncia)
-						<tr>
-							<td scope="row">{{ $denuncia->problema }}</td>
-							<td>{{ $denuncia->tipo }}</td>
-							<td>{{ $denuncia->lixeira }}</td>
-							<td>{{ $denuncia->acontecimento }}</td>
-							<td>{{ $denuncia->local }}</td>
-							@if ($denuncia->user_id == "")
-								<td>Anonimo</td>
-							@else
-								<td>{{ $denuncia->user->name }}</td>
-							@endif
-						</tr>
+						@if($denuncia->status == 0)
+							<tr>
+								<td scope="row">{{ $denuncia->problema }}</td>
+								<td>{{ $denuncia->tipo }}</td>
+								<td>{{ $denuncia->lixeira }}</td>
+								<td>{{ $denuncia->acontecimento }}</td>
+								<td>{{ $denuncia->local }}</td>
+								@if ($denuncia->user_id == "")
+									<td>Anonimo</td>
+								@else
+									<td>{{ $denuncia->user->name }}</td>
+								@endif
+								<td> 
+								{!! Form::open(['route' => ['denuncias.updateDenuncia', $denuncia->id], 'method' => 'PUT']) !!}
+				                    {!! Form::text('status', '1', ['hidden']) !!}			                  
+									<button type="submit" class="btn btn-success"><i class="fas fa-trash"></i></button> 
+				                {!! Form::close() !!}
+				                </td>
+							</tr>
+						@endif
 					@endforeach
 					</tbody>
 				</table>

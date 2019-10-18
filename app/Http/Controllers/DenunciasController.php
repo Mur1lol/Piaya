@@ -36,12 +36,20 @@ class DenunciasController extends Controller
         return view('denuncias.edit', compact('user'));
     }
 
-    public function update(Request $request, User $user) {
-            $user->fill($request->all());
-            $user->save();
+    public function updateUser(Request $request, User $user) {
+        $user->fill($request->all());
+        $user->save();
 
-            return redirect(route('denuncias.show', $user->id));
+        return redirect(route('denuncias.show', $user->id));
     }
+
+    public function updateDenuncia(Request $request, Denuncia $denuncia) {
+        $denuncia->fill($request->all());
+        $denuncia->save();
+
+        return redirect(route('denuncias.index', $denuncia->id));
+    }
+
 
     public function gerarRelatorio($problema) {
         if($problema == "0") { $denuncias = Denuncia::all(); }

@@ -112,6 +112,7 @@
             {!! Form::text('user_id', Auth::user()->id, ['class' => 'form-control','hidden']) !!}
         @endguest
 
+        {!! Form::text('status', 0, ['class' => 'form-control', 'hidden']) !!}
         {!! Form::submit('Enviar', ['class' => 'envio btn btn-primary']) !!}
         {!! Form::close() !!}
     </div>

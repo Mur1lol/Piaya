@@ -42,7 +42,7 @@
 				[Auth::user()->id],
 				['class' => 'btn btn-primary'])}} -->
 
-				{!! Form::open(['route' => ['denuncias.update', $user->id], 'method' => 'PUT']) !!}
+				{!! Form::open(['route' => ['denuncias.updateUser', $user->id], 'method' => 'PUT']) !!}
                     <div class="form-group">
                         {!! Form::text('adm', '1', ['class' => 'form-control', 'hidden']) !!}
                     </div>
