@@ -9,15 +9,18 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class EnviarEmail extends Mailable {
     use Queueable, SerializesModels;
-
+    public $email;
+    public $nome;
+    
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($email, $nome)
     {
-   
+        $this->email = $email;
+        $this->nome = $nome;
     }
 
     /**
@@ -26,7 +29,7 @@ class EnviarEmail extends Mailable {
      * @return $this
      */
     public function build() {
-        return $this->from('piaya.devs@gmail.com', 'Piaya Developers')
+        return $this->from($this->email, $this->nome)
             ->subject('Solicitação de Administração')
             ->markdown('mails.exmpl')
             ->with([
@@ -35,7 +38,7 @@ class EnviarEmail extends Mailable {
             ]);
 
         // return $this->view($this->view)
-        //     ->from("bc.murilo.mbc@gmail.com", "SIG")
+        //     ->from($this->email, $this->nome)
         //     ->subject($this->titulo)
         //     ->with('dados', $this->dados);
     }

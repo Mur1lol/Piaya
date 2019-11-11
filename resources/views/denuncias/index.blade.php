@@ -2,7 +2,6 @@
 
 @section('conteudo')
 <div class="container chao">
-
 	@if (Auth::user()->adm != 1)
 		<!-- <div class="alert alert-danger text-center" role="alert">
 			<strong>Está é uma função disponivel apenas para o Administrador!</strong>
@@ -112,15 +111,15 @@
 								<td>{{ $denuncia->lixeira }}</td>
 								<td>{{ $denuncia->acontecimento }}</td>
 								<td>{{ $denuncia->local }}</td>
-								@if ($denuncia->user_id == "")
-									<td>Anonimo</td>
-								@else
-									<td>{{ $denuncia->user->name }}</td>
+								@if ($denuncia->user_id == "") <td>Anonimo</td>
+								@else <td>{{ $denuncia->user->name }}</td>
 								@endif
 								<td> 
 								{!! Form::open(['route' => ['denuncias.updateDenuncia', $denuncia->id], 'method' => 'PUT']) !!}
 				                    {!! Form::text('status', '1', ['hidden']) !!}			                  
-									<button type="submit" class="btn btn-success"><i class="fas fa-trash"></i></button> 
+									<button type="submit" class="btn btn-success">
+										<i class="fas fa-trash"></i>
+									</button> 
 				                {!! Form::close() !!}
 				                </td>
 							</tr>

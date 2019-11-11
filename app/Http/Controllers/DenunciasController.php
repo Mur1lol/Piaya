@@ -28,22 +28,7 @@ class DenunciasController extends Controller
         return redirect(route('denuncias.index'));
     }
 
-    public function show(User $user) {
-        return view('denuncias.show', compact('user'));
-    }
-
-    public function edit(User $user) {
-        return view('denuncias.edit', compact('user'));
-    }
-
-    public function updateUser(Request $request, User $user) {
-        $user->fill($request->all());
-        $user->save();
-
-        return redirect(route('denuncias.show', $user->id));
-    }
-
-    public function updateDenuncia(Request $request, Denuncia $denuncia) {
+    public function update(Request $request, Denuncia $denuncia) {
         $denuncia->fill($request->all());
         $denuncia->save();
 

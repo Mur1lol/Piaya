@@ -3,13 +3,15 @@
 use App\Mail\EnviarEmail;
 use Illuminate\Support\Facades\Mail;
 
-Route::get('/enviar', function () {
+Route::get('/enviar/{email}', function () {
 
     Mail::to('piaya.devs@gmail.com')->send(new EnviarEmail()); 
 
     return 'Mensagem Enviada!';
 
 });
+
+//DENUNCIAS -------------------------------------------------------------------------
 
 Route::get('/denuncias', 'DenunciasController@index')
 	->middleware('auth')
@@ -21,6 +23,10 @@ Route::get('/denuncias/create', 'DenunciasController@create')
 Route::post('/denuncias', 'DenunciasController@store')
 	->name('denuncias.store');
 
+Route::put('/denuncias/{denuncia}', 'DenunciasController@update')
+	->middleware('auth')
+    ->name('denuncias.updateDenuncia');
+
 Route::get('/denuncias/relatorio/{problema}.pdf', 'DenunciasController@gerarRelatorio')
 	->middleware('auth')
 	->name('denuncias.relatorio');
@@ -29,21 +35,30 @@ Route::get('/denuncias/grafico/{opcao}', 'DenunciasController@grafico')
 	->middleware('auth')
 	->name('denuncias.grafico');
 
-Route::get('/perfil/{user}', 'DenunciasController@show')
-	->middleware('auth')
-    ->name('denuncias.show');
+//USUARIOS ---------------------------------------------------------------------------
 
-Route::get('/perfil/{user}/edit', 'DenunciasController@edit')
+Route::get('/solicitacao', 'UsersController@index')
 	->middleware('auth')
-    ->name('denuncias.edit');
+	->name('users.index');
 
-Route::put('/perfil/{user}', 'DenunciasController@updateUser')
+Route::get('/perfil/{user}', 'UsersController@show')
 	->middleware('auth')
-    ->name('denuncias.updateUser');
+    ->name('users.show');
 
-Route::put('/denuncias/{denuncia}', 'DenunciasController@updateDenuncia')
+Route::get('/solicitacao/create', 'usersController@create')
+	->name('users.create');
+
+Route::post('/solicitacao', 'usersController@store')
+	->name('users.store');
+
+Route::get('/perfil/{user}/edit', 'UsersController@edit')
 	->middleware('auth')
-    ->name('denuncias.updateDenuncia');
+    ->name('users.edit');
+
+Route::put('/perfil/{user}', 'UsersController@update')
+	->middleware('auth')
+    ->name('users.update');
+
 
 Auth::routes();
 

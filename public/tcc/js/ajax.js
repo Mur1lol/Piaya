@@ -27,7 +27,7 @@ $(document).ready(function(){
 				<td>${denuncia.local }</td>
 				<td>${denuncia.usuario}</td>
 				<td>
-					<form method="POST" action="http://localhost:8000/denuncias/${denuncia.id}" accept-charset="UTF-8">
+					<form method="POST" action="http://10.1.1.104:8000/denuncias/${denuncia.id}" accept-charset="UTF-8">
 						<input name="_method" type="hidden" value="PUT">
 						<input name="_token" type="hidden" value="yYngjCglm589bL8RX6ekCK9bARJAEJXViSpnod8d">
 	                    <input hidden="" name="status" type="text" value="1">			                  

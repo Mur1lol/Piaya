@@ -106,6 +106,15 @@
 									</li>
 								</ul>
 							</div>
+							@if(Auth::user()->super == 1)
+								<li class="nav-item">
+									{{ link_to_route(
+									'users.index',
+									'Solicitações',
+									[],
+									['class' => 'nav-link']) }}
+								</li>
+							@endif
 							@endif
 						
 
@@ -116,7 +125,7 @@
 
 							    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 							        {{ link_to_route(
-										'denuncias.show',
+										'users.show',
 										'Perfil',
 										[ Auth::user()->id ],
 										['class' => 'dropdown-item']) }}
