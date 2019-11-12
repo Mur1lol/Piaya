@@ -1,9 +1,5 @@
 @extends('layouts.template')
 
-@section('titulo')
-	Denuncia
-@endsection
-
 @section('conteudo')
 
     <div class="container chao">
@@ -15,7 +11,7 @@
         </div>
         <div class="form-group">
             {!! Form::label('descricao', 'Descrição') !!}
-            {!! Form::textarea('descricao', '', ['class' => 'form-control', 'rows' => '10', 'required']) !!}
+            {!! Form::textarea('descricao', '', ['class' => 'form-control', 'rows' => '10','placeholder' => 'Digite aqui...' ,'required']) !!}
         </div>
 
         {!! Form::submit('Enviar', ['class' => 'btn btn-primary']) !!}

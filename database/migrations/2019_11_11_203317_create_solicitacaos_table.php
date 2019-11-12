@@ -17,7 +17,7 @@ class CreateSolicitacaosTable extends Migration
             $table->bigIncrements('id');
             $table->string('titulo');
             $table->string('descricao');
-            $table->bigInteger('user_id')->nullable()->unsigned()->index();
+            $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

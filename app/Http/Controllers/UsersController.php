@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Solicitacao;
 use Auth;
 
 class UsersController extends Controller
 {
     public function index() {
-        $users = User::all();
-        return view('users.index', compact('users'));
+        $solicitacaos = Solicitacao::all();
+        return view('users.index', compact('solicitacaos'));
     }
 
     public function show(User $user) {
@@ -22,12 +23,12 @@ class UsersController extends Controller
     }
 
     public function store(Request $request) {
-        $denuncia = new Denuncia();
-        $denuncia->fill($request->all());
-        $denuncia->user()->associate(Auth::user());
-        $denuncia->save();
+        $solicitacao = new Solicitacao();
+        $solicitacao->fill($request->all());
+        $solicitacao->user()->associate(Auth::user());
+        $solicitacao->save();
 
-        return redirect(route('users.show', compact('user')));
+        return redirect(route('users.show', Auth::user()->id));
     }
 
     public function edit(User $user) {
@@ -38,7 +39,14 @@ class UsersController extends Controller
         $user->fill($request->all());
         $user->save();
 
-        return redirect(route('users.show', $user->id));
+        return redirect(route('users.create'));
+    }
+
+    public function updateUser(Request $request, User $user) {
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect(route('users.index'));
     }
 
 }

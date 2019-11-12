@@ -43,6 +43,10 @@ class User extends Authenticatable
         return $this->hasMany(Denuncia::class);
     }
 
+    public function solicitacaos(){
+        return $this->hasMany(Solicitacao::class);
+    }
+
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new meuResetDeSenha($token));

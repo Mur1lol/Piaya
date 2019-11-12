@@ -10,12 +10,8 @@
 			</div>
 		@else
     	<div class="row">
-			<div class="col-md-3">
-				<img src="https://prnethost.com.br/site/wp-content/uploads/2019/04/masculino.png" class="img-thumbnail" alt="Responsive image">
-				<!-- <a class="text-center" href="#">Trocar Imagem</a> -->
-			</div>
-			<div class="col-md-9">
-        		{!! Form::open(['route' => ['denuncias.update', $user->id], 'method' => 'PUT']) !!}
+			<div class="col-md-12">
+        		{!! Form::open(['route' => ['users.update', $user->id], 'method' => 'PUT']) !!}
         		@csrf
 	            <div class="form-group">
 	                {!! Form::label('name', 'Nome') !!}

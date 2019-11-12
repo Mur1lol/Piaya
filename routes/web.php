@@ -1,16 +1,5 @@
 <?php
 
-use App\Mail\EnviarEmail;
-use Illuminate\Support\Facades\Mail;
-
-Route::get('/enviar/{email}', function () {
-
-    Mail::to('piaya.devs@gmail.com')->send(new EnviarEmail()); 
-
-    return 'Mensagem Enviada!';
-
-});
-
 //DENUNCIAS -------------------------------------------------------------------------
 
 Route::get('/denuncias', 'DenunciasController@index')
@@ -25,7 +14,7 @@ Route::post('/denuncias', 'DenunciasController@store')
 
 Route::put('/denuncias/{denuncia}', 'DenunciasController@update')
 	->middleware('auth')
-    ->name('denuncias.updateDenuncia');
+    ->name('denuncias.update');
 
 Route::get('/denuncias/relatorio/{problema}.pdf', 'DenunciasController@gerarRelatorio')
 	->middleware('auth')
@@ -50,6 +39,10 @@ Route::get('/solicitacao/create', 'usersController@create')
 
 Route::post('/solicitacao', 'usersController@store')
 	->name('users.store');
+
+Route::put('/solicitacao/{user}', 'UsersController@updateUser')
+	->middleware('auth')
+    ->name('users.updateUser');
 
 Route::get('/perfil/{user}/edit', 'UsersController@edit')
 	->middleware('auth')
