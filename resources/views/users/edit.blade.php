@@ -7,11 +7,17 @@
 			    {{ Html::script('tcc/js/solicitacao.js') }}
 			    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 			    <script>
-				    	Swal.fire({
-						  icon: 'error',
-						  title: 'Oops...',
-						  text: 'Parece que você está tentando editar as informações de outra pessoa!'
-						})
+			    	Swal.fire({
+						icon: 'error',
+						title: 'Oops...',
+						text: 'Parece que você está tentando editar as informações de outra pessoa!',
+						showCloseButton: false,
+						showCancelButton: false,
+						focusConfirm: false,
+						confirmButtonText:
+						'<a href="{{ route('home') }}" style="color: white">Retornar para a pagina inicial!</a>',
+						confirmButtonAriaLabel: 'Thumbs up, great!'
+					})
 			    </script>
 			@endsection
 		@else

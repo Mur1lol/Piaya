@@ -8,11 +8,11 @@
 
 //------------------------------------------------------------------------------------------------------------
 
-	$problema;
-	$tipo;
-	$lixeira;
-	$acontecimento;
-	$local;
+	$problema = "";
+	$tipo= "";
+	$lixeira="";
+	$acontecimento="";
+	$local="";
 
 	if (isset($_GET["problema"])) {
 		$problema = $_GET["problema"];
@@ -37,17 +37,22 @@
        die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO denuncias (problema, tipo, lixeira, acontecimento, local, status) 
-			VALUES ('$problema', '$tipo', '$lixeira', '$acontecimento', '$local', 0)";
+    if ($problema != "" && $tipo != "" && $acontecimento != "" && $local != "") {
 
-    if (mysqli_query($conn, $sql)) {
-       $json = array('mensagem' => 'Denuncia cadastrada com sucesso');
-    } else {
-       $json = array('mensagem' => 'Erro ao cadastrar');
-    }
+	    $sql = "INSERT INTO denuncias (problema, tipo, lixeira, acontecimento, local, status) 
+				VALUES ('$problema', '$tipo', '$lixeira', '$acontecimento', '$local', 0)";
+
+	    if (mysqli_query($conn, $sql)) {
+	       $json = array('mensagem' => 'Denuncia cadastrada com sucesso');
+	    } else {
+	       $json = array('mensagem' => 'Erro ao cadastrar');
+	    }
+	}
+	else {
+		$json = array('mensagem' => 'Erro ao cadastrar');
+	}
     $conn->close();
 
-    // header('Content-Type: application/json');
 	echo json_encode($json);
 
-?>
+?>	

@@ -32,7 +32,7 @@ class DenunciasController extends Controller
         $denuncia->fill($request->all());
         $denuncia->save();
 
-        return redirect(route('denuncias.index', $denuncia->id));
+        return redirect(route('denuncias.index'));
     }
 
 

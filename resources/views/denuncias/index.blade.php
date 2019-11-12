@@ -87,7 +87,7 @@
 				<div class="input-group-append">
 				    <button class="btn btn-success pesquisa busca" type="submit"><i class="fas fa-search"></i></button>
 				</div>
-			</div>			
+			</div>
 			
 			<div class="table-responsive" id="table-scroll">
 				<table class="table table-bordered table-dark text-center" >
