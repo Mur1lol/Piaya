@@ -47,8 +47,8 @@
 						    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
 						</li>
 						@else
-							@if (Auth::user()->adm == 1)
-								@if(Auth::user()->super == 1)
+							@if (Auth::user()->adm >= 1)
+								@if(Auth::user()->adm == 2)
 									<li class="nav-item">
 										{{ link_to_route(
 										'users.index',

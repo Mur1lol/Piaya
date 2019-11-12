@@ -42,7 +42,8 @@
 			OR denuncias.local LIKE '%$filtro%' AND user_id is NULL AND denuncias.status = 0
 
 			OR users.name like '%$filtro%' AND user_id = users.id AND denuncias.status = 0
-			OR users.name like '%$filtro%' AND user_id is NULL AND denuncias.status = 0
+			OR 'Anonimo' like '%$filtro%' AND user_id is NULL AND denuncias.status = 0
+
 
 			ORDER BY denuncias.local"
 		);

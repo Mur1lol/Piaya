@@ -6,7 +6,7 @@
 		
 		<div class="row">
 			@foreach($solicitacaos as $solicitacao)
-				@if($solicitacao->user->status == 1)
+				@if($solicitacao->user->status == 1  && $solicitacao->user->adm == 0)
 					<div class="col-md-6">
 						<div class="form-group">
 							<div class="input-group botao">

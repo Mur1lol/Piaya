@@ -34,10 +34,10 @@ Route::get('/perfil/{user}', 'UsersController@show')
 	->middleware('auth')
     ->name('users.show');
 
-Route::get('/solicitacao/create', 'usersController@create')
+Route::get('/solicitacao/create', 'UsersController@create')
 	->name('users.create');
 
-Route::post('/solicitacao', 'usersController@store')
+Route::post('/solicitacao', 'UsersController@store')
 	->name('users.store');
 
 Route::put('/solicitacao/{user}', 'UsersController@updateUser')
@@ -52,6 +52,9 @@ Route::put('/perfil/{user}', 'UsersController@update')
 	->middleware('auth')
     ->name('users.update');
 
+Route::put('/redirect/{user}', 'UsersController@redirect')
+	->middleware('auth')
+    ->name('users.redirect');
 
 Auth::routes();
 

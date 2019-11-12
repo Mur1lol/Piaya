@@ -54,7 +54,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'status' => ['required', 'string', 'min:1'],
             'adm' => ['required', 'string', 'min:1'],
-            'super' => ['required', 'string', 'min:1'],
         ]);
     }
 
@@ -72,7 +71,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'status' => $data['status'],
             'adm' => $data['adm'],
-            'super' => $data['super'],
         ]);
     }
 }

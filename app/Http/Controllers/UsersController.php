@@ -35,11 +35,18 @@ class UsersController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(Request $request, User $user) {
+    public function redirect(Request $request, User $user) {
         $user->fill($request->all());
         $user->save();
 
         return redirect(route('users.create'));
+    }
+
+    public function update(Request $request, User $user) {
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect(route('users.show', Auth::user()->id));
     }
 
     public function updateUser(Request $request, User $user) {

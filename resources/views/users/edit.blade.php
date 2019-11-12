@@ -3,11 +3,17 @@
 @section('conteudo')
     <div class="container">
     	@if ($user->id != Auth::user()->id)
-			<div class="container text-center">
-				<h2>Ops...</h2>
-				<p>Parece que você está tentando editar as informações de outra pessoa.</p>
-				<img src="https://img.ibxk.com.br/2017/12/12/gif-giphy-12172743636300.gif">
-			</div>
+			@section('script')
+			    {{ Html::script('tcc/js/solicitacao.js') }}
+			    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+			    <script>
+				    	Swal.fire({
+						  icon: 'error',
+						  title: 'Oops...',
+						  text: 'Parece que você está tentando editar as informações de outra pessoa!'
+						})
+			    </script>
+			@endsection
 		@else
     	<div class="row">
 			<div class="col-md-12">
