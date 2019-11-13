@@ -88,6 +88,8 @@
 				    <button class="btn btn-success pesquisa busca" type="submit"><i class="fas fa-search"></i></button>
 				</div>
 			</div>
+
+			<input type="hidden" id="rota" value="{{ route('denuncias.update', '') }}">
 			
 			<div class="table-responsive" id="table-scroll">
 				<table class="table table-bordered table-dark text-center" >
