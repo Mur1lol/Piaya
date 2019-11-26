@@ -33,10 +33,6 @@
 					<input type="email" class="form-control" id="email" value="{{ $user->email }}" disabled>
 				</div>
 				<div class="form-group">
-					<label for="senha">Senha</label>
-					<input type="password" class="form-control" id="senha" value="{{ $user->password }}" disabled>
-				</div>
-				<div class="form-group">
 					{{ link_to_route(
 					'users.edit',
 					'Atualizar Dados',

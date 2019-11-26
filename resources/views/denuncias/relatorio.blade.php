@@ -12,43 +12,48 @@
                 <strong>Está é uma função disponivel apenas para o Administrador!</strong>
             </div>
         @else
-        <div class="jumbotron" style="background-color: #a9ff85; padding: 25px;">
-            <img src="https://admin.googleusercontent.com/logo-scs-key1103327" style="width: 200px;">
-            <h2 style="float: right;position: relative;top: 25px;">Relatório de Denuncias</h2>
-        </div>
-        <br>
+            <div class="jumbotron" style="background-color: #a9ff85; padding: 25px;">
+                <img src="https://admin.googleusercontent.com/logo-scs-key1103327" style="width: 200px;">
+                <h2 style="float: right;position: relative;top: 25px;">Relatório de Denuncias</h2>
+            </div>
+            <br>
 
-
-        <div class="table-responsive">
-            <table class="table table-bordered table-dark text-center" >
-                <thead class="" id="titulo">
-                    <tr style="background-color: #a9ff85;">
-                        <th scope="col">Problema</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Lixeira</th>
-                        <th scope="col">Acontecimento</th>
-                        <th scope="col">Local</th>
-                        <th scope="col">Usuario</th>
-                    </tr>
-                </thead>
-                <tbody class="denuncias" >
-                @foreach($denuncias as $denuncia)
-                    <tr>
-                        <td scope="row">{{ $denuncia->problema }}</td>
-                        <td>{{ $denuncia->tipo }}</td>
-                        <td>{{ $denuncia->lixeira }}</td>
-                        <td>{{ $denuncia->acontecimento }}</td>
-                        <td>{{ $denuncia->local }}</td>
-                        @if ($denuncia->user_id == "")
-                            <td>Anonimo</td>
-                        @else
-                            <td>{{ $denuncia->user->name }}</td>
-                        @endif
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div>
+        @if (count($denuncias) == 0)
+            <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+                <strong>Sem nenhuma denuncia até o momento :) !</strong>
+            </div>
+        @else
+            <div class="table-responsive">
+                <table class="table table-bordered table-dark text-center" >
+                    <thead class="" id="titulo">
+                        <tr style="background-color: #a9ff85;">
+                            <th scope="col">Problema</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Lixeira</th>
+                            <th scope="col">Acontecimento</th>
+                            <th scope="col">Local</th>
+                            <th scope="col">Usuario</th>
+                        </tr>
+                    </thead>
+                    <tbody class="denuncias" >
+                    @foreach($denuncias as $denuncia)
+                        <tr>
+                            <td scope="row">{{ $denuncia->problema }}</td>
+                            <td>{{ $denuncia->tipo }}</td>
+                            <td>{{ $denuncia->lixeira }}</td>
+                            <td>{{ $denuncia->acontecimento }}</td>
+                            <td>{{ $denuncia->local }}</td>
+                            @if ($denuncia->user_id == "")
+                                <td>Anonimo</td>
+                            @else
+                                <td>{{ $denuncia->user->name }}</td>
+                            @endif
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        @endif
         
         <br>
         <footer class="py-2 text-center footer" style="background-color: #a9ff85; padding: 25px;">

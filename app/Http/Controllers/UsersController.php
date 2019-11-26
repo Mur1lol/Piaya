@@ -10,7 +10,7 @@ use Auth;
 class UsersController extends Controller
 {
     public function index() {
-        $solicitacaos = Solicitacao::all();
+        $solicitacaos = Solicitacao::where('titulo', 'like', 'Solicitacao para Administrador')->orderBy('user_id')->get();
         return view('users.index', compact('solicitacaos'));
     }
 

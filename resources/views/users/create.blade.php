@@ -7,7 +7,7 @@
 
        	<div class="form-group">
                 {!! Form::label('titulo', 'Título') !!}
-                {!! Form::text('titulo', 'Solicitacao para Administrador', ['class' => 'form-control', 'required']) !!}
+                {!! Form::text('titulo', 'Solicitacao para Administrador', ['class' => 'form-control', 'required', 'disabled']) !!}
         </div>
         <div class="form-group">
             {!! Form::label('descricao', 'Descrição') !!}

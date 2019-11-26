@@ -33,10 +33,6 @@
 	                {!! Form::label('email', 'Email') !!}
 	                {!! Form::text('email', $user->email, ['class' => 'form-control', 'required']) !!}
 	            </div>
-	            <div class="form-group">
-					<label for="senha">Senha</label>
-					<input type="password" class="form-control" id="senha" value="{{ $user->password }}" disabled>
-				</div>
 
 	            {!! Form::submit('Confirmar', ['class' => 'btn btn-primary']) !!}
 	            {!! Form::close() !!}

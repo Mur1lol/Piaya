@@ -139,7 +139,7 @@ class DenunciasController extends Controller
             ]
         ]);
 
-        $denuncia = Denuncia::all();
+        $denuncia = Denuncia::where('status', 'like', '0')->get();
 
         return view('denuncias.grafico', compact('lava', 'denuncia'))
             ->with('tipo', 'PieChart');
@@ -279,7 +279,7 @@ class DenunciasController extends Controller
             ]
         ]);
 
-        $denuncia = Denuncia::all();
+        $denuncia = Denuncia::where('status', 'like', '0')->get();
 
         return view('denuncias.grafico', compact('lava', 'denuncia'))
             ->with('tipo', 'PieChart');
