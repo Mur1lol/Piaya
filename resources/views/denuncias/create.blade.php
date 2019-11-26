@@ -102,7 +102,7 @@
 
             <div class="form-group" id="acontecimentos">
                 {!! Form::label('acontecimento', 'Acontecimento') !!}
-                {!! Form::textarea('acontecimento', '', ['class' => 'form-control','placeholder' => 'Digite aqui...', 'rows' => '3', 'required', 'maxlength' => '100']) !!}
+                {!! Form::textarea('acontecimento', '', ['class' => 'form-control','placeholder' => 'Digite aqui...', 'rows' => '3', 'required', 'maxlength' => '50']) !!}
             </div>
         </div>
 

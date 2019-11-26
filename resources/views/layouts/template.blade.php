@@ -72,8 +72,23 @@
 										<li>
 											{{ link_to_route(
 											'denuncias.grafico',
+											'Problemas - Ativos',
+											["problema - ativo"],
+											['class' => 'dropdown-item']) }}
+										</li>
+										<div class="dropdown-divider"></div>
+										<li>
+											{{ link_to_route(
+											'denuncias.grafico',
 											'Locais',
 											["local"],
+											['class' => 'dropdown-item']) }}
+										</li>
+										<li>
+											{{ link_to_route(
+											'denuncias.grafico',
+											'Locais - Ativos',
+											["local - ativo"],
 											['class' => 'dropdown-item']) }}
 										</li>
 									</ul>
@@ -88,9 +103,17 @@
 											{{ link_to_route(
 											'denuncias.relatorio',
 											'Todos',
-											["0"],
+											["Todos"],
 											['class' => 'dropdown-item', 'target' => '_blank']) }}
 										</li>
+										<li>
+											{{ link_to_route(
+											'denuncias.relatorio',
+											'Todos - Ativos',
+											["Todos - Ativos"],
+											['class' => 'dropdown-item', 'target' => '_blank']) }}
+										</li>
+										<div class="dropdown-divider"></div>
 										<li>
 											{{ link_to_route(
 											'denuncias.relatorio',
@@ -101,6 +124,14 @@
 										<li>
 											{{ link_to_route(
 											'denuncias.relatorio',
+											'Lixo - Ativos',
+											["Lixo - Ativos"],
+											['class' => 'dropdown-item', 'target' => '_blank']) }}
+										</li>
+										<div class="dropdown-divider"></div>
+										<li>
+											{{ link_to_route(
+											'denuncias.relatorio',
 											'Água',
 											["Problemas relacionados a agua"],
 											['class' => 'dropdown-item', 'target' => '_blank']) }}
@@ -108,8 +139,23 @@
 										<li>
 											{{ link_to_route(
 											'denuncias.relatorio',
+											'Água - Ativos',
+											["Agua - Ativos"],
+											['class' => 'dropdown-item', 'target' => '_blank']) }}
+										</li>
+										<div class="dropdown-divider"></div>
+										<li>
+											{{ link_to_route(
+											'denuncias.relatorio',
 											'Luz',
 											["Uso inadequado da luz"],
+											['class' => 'dropdown-item', 'target' => '_blank']) }}
+										</li>
+										<li>
+											{{ link_to_route(
+											'denuncias.relatorio',
+											'Luz - Ativos',
+											["Luz - Ativos"],
 											['class' => 'dropdown-item', 'target' => '_blank']) }}
 										</li>
 									</ul>
@@ -126,6 +172,8 @@
 										'Perfil',
 										[ Auth::user()->id ],
 										['class' => 'dropdown-item']) }}
+
+									<div class="dropdown-divider"></div>
 
 							        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
 							        document.getElementById('logout-form').submit();">
