@@ -3,67 +3,59 @@
 @section('conteudo')
 <div class="container chao">
 	@if (Auth::user()->adm == 0)
-		<!-- <div class="alert alert-danger text-center" role="alert">
-			<strong>Está é uma função disponivel apenas para o Administrador!</strong>
-		</div> -->
-
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-10">
 				<div id="sobre">
 					<h2>Sobre</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>O Projeto Piaya é um programa cujo principal objetivo é permitir que haja uma diminuição de desperdícios em um certo ambiente, fazendo com que nesse local os prejuízos ao meio ambiente sejam diminuídos bem como os gastos da empresa, que emprega a aplicação, nos setores de luz e água.</p>
 				</div>
-				<br>
-				<div id="exemplo">
+				
+				<div id="funcionamento">
+					<h2>Funcionamento</h2>
+					<p>A aplicação funciona como um meio para as pessoas avisarem a empresa sobre problemas relacionados a qualquer tipo de desperdício ou de descarte incorreto de lixo, através de envios de formulários que poderão ser visualizados pelos administradores para que estes tomem a melhor decisão para solucionar o problema ou dificultar sua volta.</p>
+					<p>Para enviar estes formulários não é necessário estar logado no sistema, caso decida fazer um envio sem ser identificado basta utilizar o aplicativo para smartphone ou mesmo utilizar o site sem se logar, porém caso queira se identificar, basta logar-se antes de fazer o envio do mesmo.</p>
+				</div>
+				
+				<!-- <div id="exemplo">
 					<h2>Exemplo</h2>
 					<iframe width="90%" height="300px" src="https://www.youtube.com/embed/MMdTyd4ZLHI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
-				<br>
+				<br> -->
 				<div id="devs">
 					<h2>Desenvolvedores</h2>
-					<p>Alunos do curso de Informática do Instituto Federal do Paraná - Campus Paranaguá</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<div class="row">
-						<div class="col-md-5 card-index dev">
+					<p>Esta aplicação foi desenvolvida pelos alunos Murilo Brasil e Rafael Tesch do último ano do Ensino Médio Integrado ao curso de Informática, como forma de demonstrar a instituição de ensino que possuem os conhecimentos necessários para se formarem e atuar na área de informática como profissionais competentes.</p>
+					<!-- <div class="row">
+						<div class="col-md card-index dev">
 							<h3 class="text-center" style="margin-top: 10px;">Murilo</h3>
 							<img class="perfil" src="{{ asset('images/Murilo.jpg') }}" style="width: 286px;">
 							<div class="card-text text-center">
 								<p> Lorem ipsum dolor sente-se em entre consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt elegendi dolor </p>
 							</div>
 						</div>
-						<div class="col-md-5 card-index dev">
+						<div class="col-md card-index dev">
 							<h3 class="text-center" style="margin-top: 10px;">Rafael</h3>
 							<img class="perfil" src="{{ asset('images/Rafael.jpg') }}" style="width: 286px;">
 							<div class="card-text text-center">
 								<p> Lorem ipsum dolor sente-se em entre consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt elegendi dolor </p>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
-			<div class="col-md-4">
+			<!-- <div class="col-md-4">
 				<div class="card menu" style="border-radius: 15px;">
 					<div class="card-header text-center">
 						Menu
 					</div>
 					
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item"><a href="#sobre">Sobre</a></li>
-							<li class="list-group-item"><a href="#exemplo">Exemplo</a></li>
-							<li class="list-group-item" style="border-bottom-left-radius: 15px;border-bottom-right-radius: 15px"><a href="#devs">Desenvolvedores</a></li>
-						</ul>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><a href="#sobre">Sobre</a></li>
+						<li class="list-group-item"><a href="#funcionamento">Funcionamento</a></li>
+						<li class="list-group-item"><a href="#exemplo">Exemplo</a></li>
+						<li class="list-group-item" style="border-bottom-left-radius: 15px;border-bottom-right-radius: 15px"><a href="#devs">Desenvolvedores</a></li>
+					</ul>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	@else
 		<?php $ativo = 0 ?>
