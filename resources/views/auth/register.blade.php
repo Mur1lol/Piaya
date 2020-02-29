@@ -61,8 +61,8 @@
                             </div>
                         </div>
 
-                        <input id="adm" type="hidden" class="form-control" name="adm" value="0" required autocomplete="new-adm">
-                        <input id="status" type="hidden" class="form-control" name="status" value="0" required autocomplete="new-status">
+                        <input class="form-control" hidden="" name="adm" type="text" value="0">
+                        <input class="form-control" hidden="" name="status" type="text" value="0">
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
